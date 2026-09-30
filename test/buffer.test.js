@@ -7,6 +7,21 @@ const { BufferClient, BufferApiError, parseRateLimits } = require("../buffer-cli
 const { BufferSync, isoFromLocal, validateMedia } = require("../buffer-sync");
 const { PostStore } = require("../post-store");
 
+// Future offsets can change when the runner updates its IANA time zone data.
+// Verify the requested local time rather than freezing an assumed UTC offset.
+function assertCasablancaNine(utcValue) {
+  const parts = Object.fromEntries(new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Africa/Casablanca",
+    year: "numeric", month: "2-digit", day: "2-digit",
+    hour: "2-digit", minute: "2-digit", second: "2-digit", hourCycle: "h23"
+  }).formatToParts(new Date(utcValue)).map(({ type, value }) => [type, value]));
+  assert.equal(utcValue.endsWith("Z"), true);
+  assert.deepEqual(
+    [parts.year, parts.month, parts.day, parts.hour, parts.minute, parts.second],
+    ["2026", "10", "03", "09", "00", "00"]
+  );
+}
+
 function temporaryStore(posts) {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), "buffer-test-"));
   const file = path.join(directory, "posts.json");
@@ -37,7 +52,8 @@ function ignoreConfiguredChannels(context) {
 }
 
 test("les dates locales de Casablanca sont converties en UTC", () => {
-  assert.equal(isoFromLocal("2026-10-03T09:00:00", "Africa/Casablanca"), "2026-10-03T08:00:00.000Z");
+  assert.equal(isoFromLocal("2025-10-03T09:00:00", "Africa/Casablanca"), "2025-10-03T08:00:00.000Z");
+  assertCasablancaNine(isoFromLocal("2026-10-03T09:00:00", "Africa/Casablanca"));
   assert.equal(isoFromLocal("2026-10-03T09:00:00Z"), "2026-10-03T09:00:00.000Z");
 });
 
@@ -161,5 +177,5 @@ test("la synchronisation crée puis mémorise un post Buffer", async (context) =
   assert.equal(summary.transferred, 1);
   assert.equal(delivery.status, "scheduled_in_buffer");
   assert.equal(delivery.bufferPostId, "buffer-2");
-  assert.equal(delivery.dueAt, "2026-10-03T08:00:00.000Z");
+  assertCasablancaNine(delivery.dueAt);
 });
