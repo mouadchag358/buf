@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4a300">
+  <title>Ruche — Publications Facebook</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Accueil Ruche">
+      <span class="brand-mark">R</span>
+      <span><strong>Ruche</strong><small>Publications Facebook</small></span>
+    </a>
+    <div id="connection" class="connection"><span></span> Chargement…</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Tableau de bord</p>
+        <h1>Votre contenu,<br><em>au bon moment.</em></h1>
+        <p class="intro">Préparez les visuels et les légendes. Ruche publie la prochaine création automatiquement.</p>
+      </div>
+      <button id="open-create" class="primary">＋ Nouvelle publication</button>
+    </section>
+
+    <section id="stats" class="stats" aria-label="Résumé"></section>
+
+    <section class="library-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Accès rapide</p>
+          <h2>Bibliothèque visuelle</h2>
+        </div>
+        <p class="library-help">Choisissez un visuel : sa légende sera générée automatiquement.</p>
+      </div>
+      <div id="library" class="library-strip"></div>
+    </section>
+
+    <section class="workspace">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">File d’attente</p>
+          <h2>Publications</h2>
+        </div>
+        <div class="filters" role="group" aria-label="Filtres">
+          <button class="filter active" data-filter="all">Toutes</button>
+          <button class="filter" data-filter="pending">À venir</button>
+          <button class="filter" data-filter="published">Publiées</button>
+          <button class="filter" data-filter="failed">Erreurs</button>
+        </div>
+      </div>
+      <div id="posts" class="post-grid"></div>
+      <div id="empty" class="empty" hidden>
+        <div>🍯</div>
+        <h3>La file est vide</h3>
+        <p>Ajoutez votre première publication pour commencer.</p>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="editor">
+    <form id="post-form">
+      <div class="modal-head">
+        <div><p class="eyebrow">Composer</p><h2 id="editor-title">Nouvelle publication</h2></div>
+        <button type="button" class="icon-button" id="close-editor" aria-label="Fermer">×</button>
+      </div>
+      <input type="hidden" id="post-id">
+      <input type="hidden" id="library-image">
+      <div class="label-row">
+        <label for="post-text">Légende</label>
+        <button type="button" id="generate-caption" class="text-action" hidden>✨ Nouvelle proposition</button>
+      </div>
+      <textarea id="post-text" rows="6" required maxlength="63206" placeholder="Écrivez votre légende…"></textarea>
+      <div class="field-meta"><span>Les retours à la ligne et les emojis sont conservés.</span><span id="character-count">0 caractère</span></div>
+      <label for="post-schedule">Date et heure de publication</label>
+      <input id="post-schedule" class="date-input" type="datetime-local">
+      <div class="field-meta schedule-help"><span>Laissez vide pour utiliser la file quotidienne à 9 h et à 13 h (heure de Casablanca).</span><span>Heure locale</span></div>
+      <label for="post-image">Image <span id="image-optional"></span></label>
+      <label class="dropzone" for="post-image">
+        <input id="post-image" type="file" accept="image/jpeg,image/png,image/gif,image/bmp,image/tiff">
+        <img id="image-preview" alt="Aperçu" hidden>
+        <span id="drop-copy"><b>Choisir une image</b><small>JPEG, PNG, GIF, BMP ou TIFF · 10 Mo maximum</small></span>
+      </label>
+      <div class="modal-actions">
+        <button type="button" class="secondary" id="cancel-editor">Annuler</button>
+        <button type="submit" class="primary" id="save-post">Ajouter à la file</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="confirm-dialog" class="confirm-dialog">
+    <form method="dialog">
+      <div class="confirm-icon">!</div>
+      <h2 id="confirm-title">Confirmation</h2>
+      <p id="confirm-message"></p>
+      <div class="modal-actions">
+        <button value="cancel" class="secondary">Annuler</button>
+        <button value="confirm" class="danger" id="confirm-action">Confirmer</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
