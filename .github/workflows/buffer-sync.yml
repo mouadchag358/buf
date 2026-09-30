@@ -16,23 +16,26 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+
     env:
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
       BUFFER_ORGANIZATION_ID: 6a9dd40e7a5c57f938ac3176
       BUFFER_FACEBOOK_CHANNEL_ID: 6ab674f7ea19ca0bdee54b05
       BUFFER_INSTAGRAM_CHANNEL_ID: 6ab6749aea19ca0bdee546fa
+
       PUBLIC_MEDIA_REPOSITORY: ${{ github.repository }}
       PUBLIC_MEDIA_REF: ${{ github.ref_name }}
+
       TIME_ZONE: Africa/Casablanca
 
     steps:
       - name: Récupérer le dépôt
-        uses: actions/checkout@v7
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: Installer Node.js
-        uses: actions/setup-node@v7
+        uses: actions/setup-node@v6
         with:
           node-version: 24
           cache: npm
@@ -50,10 +53,15 @@ jobs:
         shell: bash
         run: |
           if git diff --quiet -- posts.json; then
+            echo "Aucune modification à enregistrer"
             exit 0
           fi
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add posts.json
           git commit -m "chore: persist Buffer sync state"
+
+          git pull --rebase
           git push
