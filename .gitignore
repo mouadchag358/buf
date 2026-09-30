@@ -2,3 +2,4 @@
 node_modules/
 posts.json.lock
 posts.json.*.tmp
+.env.example
