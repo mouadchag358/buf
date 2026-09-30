@@ -24,6 +24,18 @@ function response({ status = 200, headers = {}, payload = {} } = {}) {
   };
 }
 
+function ignoreConfiguredChannels(context) {
+  const keys = ["BUFFER_CHANNEL_IDS", "BUFFER_FACEBOOK_CHANNEL_ID", "BUFFER_INSTAGRAM_CHANNEL_ID"];
+  const original = new Map(keys.map((key) => [key, process.env[key]]));
+  keys.forEach((key) => delete process.env[key]);
+  context.after(() => {
+    for (const [key, value] of original) {
+      if (value === undefined) delete process.env[key];
+      else process.env[key] = value;
+    }
+  });
+}
+
 test("les dates locales de Casablanca sont converties en UTC", () => {
   assert.equal(isoFromLocal("2026-10-03T09:00:00", "Africa/Casablanca"), "2026-10-03T08:00:00.000Z");
   assert.equal(isoFromLocal("2026-10-03T09:00:00Z"), "2026-10-03T09:00:00.000Z");
@@ -89,6 +101,7 @@ test("les quotas Buffer sont décodés sans exposer la clé", () => {
 });
 
 test("la synchronisation ne duplique pas un envoi Buffer incertain", async (context) => {
+  ignoreConfiguredChannels(context);
   const { directory, store } = temporaryStore([{
     id: "post-1",
     text: "Bonjour",
@@ -105,7 +118,6 @@ test("la synchronisation ne duplique pas un envoi Buffer incertain", async (cont
     getOrganizations: async () => [{ id: "org-1" }],
     getChannels: async () => [{ id: "channel-1", service: "facebook" }],
     getPosts: async () => [],
-    getDailyPostingLimits: async () => [],
     createPost: async () => { createCalls += 1; }
   };
   const sync = new BufferSync({
@@ -121,6 +133,7 @@ test("la synchronisation ne duplique pas un envoi Buffer incertain", async (cont
 });
 
 test("la synchronisation crée puis mémorise un post Buffer", async (context) => {
+  ignoreConfiguredChannels(context);
   const { directory, store } = temporaryStore([{
     id: "post-2",
     text: "Bonjour",
@@ -135,7 +148,6 @@ test("la synchronisation crée puis mémorise un post Buffer", async (context) =
     getOrganizations: async () => [{ id: "org-1" }],
     getChannels: async () => [{ id: "channel-ig", service: "instagram" }],
     getPosts: async () => [],
-    getDailyPostingLimits: async () => [],
     createPost: async (input) => ({ id: "buffer-2", channelId: input.channelId, status: "scheduled", dueAt: input.dueAt })
   };
   const sync = new BufferSync({

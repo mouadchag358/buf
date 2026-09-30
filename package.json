@@ -1,24 +1,18 @@
 {
-  "name": "facebook-page-scheduler",
+  "name": "buffer-social-scheduler",
   "version": "1.0.0",
-  "description": "Publication planifiee de photos sur une Page Facebook via la Meta Graph API officielle.",
-  "main": "scheduler.js",
+  "description": "Synchronisation planifiee de publications Facebook et Instagram vers Buffer.",
+  "main": "buffer-sync.js",
   "scripts": {
-    "start": "node server.js",
-    "start:scheduler": "node scheduler.js",
+    "start": "node buffer-sync.js",
     "buffer:sync": "node buffer-sync.js",
     "buffer:dry-run": "node buffer-sync.js --dry-run",
-    "post:now": "node scheduler.js --test",
     "test": "node --test test/*.test.js"
   },
   "engines": {
     "node": ">=20"
   },
   "dependencies": {
-    "axios": "^1.12.2",
-    "dotenv": "^17.2.2",
-    "form-data": "^4.0.4",
-    "node-cron": "^4.2.1",
-    "sharp": "^0.35.5"
+    "dotenv": "^17.2.2"
   }
 }

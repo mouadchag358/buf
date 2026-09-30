@@ -183,18 +183,15 @@ class BufferSync {
       channels.map((channel) => channel.id),
       ["scheduled", "sending", "sent", "error"]
     );
-    const dailyLimits = await this.client.getDailyPostingLimits(channels.map((channel) => channel.id));
     const summaries = [];
 
     for (const channel of channels) {
       const queued = remotePosts.filter((post) => post.channelId === channel.id && ["scheduled", "sending"].includes(post.status));
       let available = Math.max(0, this.maxScheduled - queued.length);
-      const dailyLimit = dailyLimits.find((limit) => limit.channelId === channel.id);
       const summary = { channel: channel.service, channelId: channel.id, queued: queued.length, available, planned: 0, transferred: 0, errors: [] };
       summaries.push(summary);
       if (channel.isQueuePaused) summary.errors.push("La file Buffer est en pause.");
-      if (dailyLimit?.isAtLimit) summary.errors.push("Limite quotidienne Buffer atteinte.");
-      if (!available || dailyLimit?.isAtLimit) continue;
+      if (!available) continue;
 
       for (const post of posts) {
         if (!available) break;

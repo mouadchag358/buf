@@ -42,12 +42,6 @@ const CREATE_POST_MUTATION = `
   }
 `;
 
-const DAILY_LIMITS_QUERY = `
-  query BufferDailyLimits($input: DailyPostingLimitsInput!) {
-    dailyPostingLimits(input: $input) { channelId sent scheduled limit isAtLimit }
-  }
-`;
-
 function parseRateLimits(header) {
   if (!header) return [];
   return header.split(/,\s*(?=")/).map((entry) => ({
@@ -174,10 +168,6 @@ class BufferClient {
 
   async getPost(id) {
     return (await this.request(POST_QUERY, { input: { id } })).post;
-  }
-
-  async getDailyPostingLimits(channelIds) {
-    return (await this.request(DAILY_LIMITS_QUERY, { input: { channelIds } })).dailyPostingLimits;
   }
 
   async createPost({ channelId, text, imageUrl, dueAt }) {
