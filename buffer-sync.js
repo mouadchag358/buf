@@ -191,6 +191,17 @@ class BufferSync {
     let attempts = 0;
     let stopped = false;
 
+    const availableServices = new Set(channels.map((channel) => channel.service));
+    const isCandidate = (post, channel) => {
+      const delivery = post.deliveries?.[channel.service];
+      return targetServices(post, availableServices).includes(channel.service)
+        && !["scheduled_in_buffer", "published", "failed_in_buffer"].includes(delivery?.status)
+        && !(delivery?.status === "past_due" && delivery.scheduledAt === post.scheduledAt);
+    };
+    const activeChannels = channels.filter((channel) => !channel.isQueuePaused
+      && remotePosts.filter((post) => post.channelId === channel.id && ["scheduled", "sending"].includes(post.status)).length < this.maxScheduled
+      && posts.some((post) => isCandidate(post, channel)));
+
     for (const channel of channels) {
       const queued = remotePosts.filter((post) => post.channelId === channel.id && ["scheduled", "sending"].includes(post.status));
       let available = Math.max(0, this.maxScheduled - queued.length);
@@ -202,15 +213,17 @@ class BufferSync {
       }
       if (!available || stopped) continue;
 
+      const activeIndex = activeChannels.indexOf(channel);
+      if (activeIndex < 0) continue;
+      const channelBudget = Math.floor(this.maxAttempts / activeChannels.length)
+        + (activeIndex < this.maxAttempts % activeChannels.length ? 1 : 0);
+      let channelAttempts = 0;
       for (const post of posts) {
-        if (!available || attempts >= this.maxAttempts || stopped) break;
-        const services = targetServices(post, new Set(channels.map((item) => item.service)));
-        if (!services.includes(channel.service)) continue;
+        if (!available || attempts >= this.maxAttempts || channelAttempts >= channelBudget || stopped) break;
+        if (!isCandidate(post, channel)) continue;
         const current = post.deliveries?.[channel.service];
-        if (["scheduled_in_buffer", "published", "failed_in_buffer"].includes(current?.status)) continue;
-
-        if (current?.status === "past_due" && current.scheduledAt === post.scheduledAt) continue;
         attempts += 1;
+        channelAttempts += 1;
         let imageUrl;
         try {
           imageUrl = mediaUrl(post.image);
