@@ -2,7 +2,7 @@ name: Synchroniser Buffer
 
 on:
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "17 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -13,7 +13,34 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  cadence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    permissions:
+      contents: read
+    outputs:
+      run_sync: ${{ steps.interval.outputs.run_sync }}
+    steps:
+      - name: Vérifier l'intervalle de dix heures
+        id: interval
+        shell: bash
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
+            echo "run_sync=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # Repère fixe UTC : conserve dix heures entre créneaux, même à minuit.
+          anchor=$(date -u -d '2026-10-02T00:00:00Z' +%s)
+          elapsed_hours=$(( ($(date -u +%s) - anchor) / 3600 ))
+          if (( elapsed_hours >= 0 && elapsed_hours % 10 == 0 )); then
+            echo "run_sync=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run_sync=false" >> "$GITHUB_OUTPUT"
+          fi
+
   sync:
+    needs: cadence
+    if: ${{ needs.cadence.outputs.run_sync == 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
