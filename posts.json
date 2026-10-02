@@ -18,17 +18,22 @@
         "bufferStatus": "scheduled",
         "bufferPostId": "6abfbf923ac90aaf27cd8f63",
         "transferredAt": "2026-10-02T14:28:34.294Z",
-        "dueAt": "2026-10-03T08:00:00.000Z"
+        "dueAt": "2026-10-03T08:00:00.000Z",
+        "lastCheckedAt": "2026-10-02T14:34:27.957Z"
       },
       "instagram": {
-        "status": "failed",
+        "status": "scheduled_in_buffer",
         "channelId": "6ab6749aea19ca0bdee546fa",
         "channel": "instagram",
-        "attemptedAt": "2026-10-02T13:45:22.829Z",
+        "attemptedAt": "2026-10-02T14:34:29.616Z",
         "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/library/Image%20ChatGPT%2028%20sept.%202026%2C%2013_31_18-6.png",
-        "lastError": "Quota Buffer atteint.",
-        "lastErrorAt": "2026-10-02T13:45:22.865Z",
-        "reconciliationRequired": false
+        "lastError": null,
+        "lastErrorAt": null,
+        "reconciliationRequired": false,
+        "bufferStatus": "scheduled",
+        "bufferPostId": "6abfc0f5e11203baed2afb8a",
+        "transferredAt": "2026-10-02T14:34:29.954Z",
+        "dueAt": "2026-10-03T08:00:00.000Z"
       }
     }
   },
@@ -51,17 +56,22 @@
         "bufferStatus": "scheduled",
         "bufferPostId": "6abfbf923ac90aaf27cd8f8c",
         "transferredAt": "2026-10-02T14:28:34.946Z",
-        "dueAt": "2026-10-03T12:00:00.000Z"
+        "dueAt": "2026-10-03T12:00:00.000Z",
+        "lastCheckedAt": "2026-10-02T14:34:27.964Z"
       },
       "instagram": {
-        "status": "failed",
+        "status": "scheduled_in_buffer",
         "channelId": "6ab6749aea19ca0bdee546fa",
         "channel": "instagram",
-        "attemptedAt": "2026-10-02T13:45:22.877Z",
+        "attemptedAt": "2026-10-02T14:34:30.086Z",
         "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/library/Image%20ChatGPT%2028%20sept.%202026%2C%2013_31_20-8.png",
-        "lastError": "Quota Buffer atteint.",
-        "lastErrorAt": "2026-10-02T13:45:22.914Z",
-        "reconciliationRequired": false
+        "lastError": null,
+        "lastErrorAt": null,
+        "reconciliationRequired": false,
+        "bufferStatus": "scheduled",
+        "bufferPostId": "6abfc0f60adf17f48c4e6339",
+        "transferredAt": "2026-10-02T14:34:30.392Z",
+        "dueAt": "2026-10-03T12:00:00.000Z"
       }
     }
   },
@@ -84,7 +94,8 @@
         "bufferStatus": "scheduled",
         "bufferPostId": "6abfbf933ac90aaf27cd8fb5",
         "transferredAt": "2026-10-02T14:28:35.340Z",
-        "dueAt": "2026-10-04T08:00:00.000Z"
+        "dueAt": "2026-10-04T08:00:00.000Z",
+        "lastCheckedAt": "2026-10-02T14:34:27.970Z"
       },
       "instagram": {
         "status": "failed",
@@ -117,7 +128,8 @@
         "bufferStatus": "scheduled",
         "bufferPostId": "6abfbf938eb909c659e0f7a2",
         "transferredAt": "2026-10-02T14:28:35.773Z",
-        "dueAt": "2026-10-04T12:00:00.000Z"
+        "dueAt": "2026-10-04T12:00:00.000Z",
+        "lastCheckedAt": "2026-10-02T14:34:27.975Z"
       },
       "instagram": {
         "status": "failed",
@@ -150,7 +162,8 @@
         "bufferStatus": "scheduled",
         "bufferPostId": "6abfbf94e11203baed2ac984",
         "transferredAt": "2026-10-02T14:28:36.257Z",
-        "dueAt": "2026-10-05T08:00:00.000Z"
+        "dueAt": "2026-10-05T08:00:00.000Z",
+        "lastCheckedAt": "2026-10-02T14:34:27.980Z"
       },
       "instagram": {
         "status": "failed",
@@ -172,14 +185,18 @@
     "scheduledAt": "2026-10-05T12:00:00.000Z",
     "deliveries": {
       "facebook": {
-        "status": "failed",
+        "status": "scheduled_in_buffer",
         "channelId": "6ab674f7ea19ca0bdee54b05",
         "channel": "facebook",
-        "attemptedAt": "2026-10-02T13:45:05.199Z",
+        "attemptedAt": "2026-10-02T14:34:28.149Z",
         "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/library/pack%20bien-etre.png",
-        "lastError": "Invalid post: Facebook posts require a type (post, story, or reel).",
-        "lastErrorAt": "2026-10-02T13:45:05.300Z",
-        "reconciliationRequired": false
+        "lastError": null,
+        "lastErrorAt": null,
+        "reconciliationRequired": false,
+        "bufferStatus": "scheduled",
+        "bufferPostId": "6abfc0f43ac90aaf27cdc5ba",
+        "transferredAt": "2026-10-02T14:34:28.614Z",
+        "dueAt": "2026-10-05T12:00:00.000Z"
       },
       "instagram": {
         "status": "failed",
@@ -201,14 +218,18 @@
     "scheduledAt": "2026-10-06T08:00:00.000Z",
     "deliveries": {
       "facebook": {
-        "status": "failed",
+        "status": "scheduled_in_buffer",
         "channelId": "6ab674f7ea19ca0bdee54b05",
         "channel": "facebook",
-        "attemptedAt": "2026-10-02T13:45:05.456Z",
+        "attemptedAt": "2026-10-02T14:34:28.730Z",
         "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/library/Image%20ChatGPT%2028%20sept.%202026%2C%2013_31_16-4.png",
-        "lastError": "Invalid post: Facebook posts require a type (post, story, or reel).",
-        "lastErrorAt": "2026-10-02T13:45:05.614Z",
-        "reconciliationRequired": false
+        "lastError": null,
+        "lastErrorAt": null,
+        "reconciliationRequired": false,
+        "bufferStatus": "scheduled",
+        "bufferPostId": "6abfc0f45f7061ee2f19aed2",
+        "transferredAt": "2026-10-02T14:34:29.033Z",
+        "dueAt": "2026-10-06T08:00:00.000Z"
       },
       "instagram": {
         "status": "failed",
@@ -230,14 +251,18 @@
     "scheduledAt": "2026-10-06T12:00:00.000Z",
     "deliveries": {
       "facebook": {
-        "status": "failed",
+        "status": "scheduled_in_buffer",
         "channelId": "6ab674f7ea19ca0bdee54b05",
         "channel": "facebook",
-        "attemptedAt": "2026-10-02T13:45:05.726Z",
+        "attemptedAt": "2026-10-02T14:34:29.164Z",
         "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/library/Image%20ChatGPT%2028%20sept.%202026%2C%2013_30_08-2.png",
-        "lastError": "Invalid post: Facebook posts require a type (post, story, or reel).",
-        "lastErrorAt": "2026-10-02T13:45:05.832Z",
-        "reconciliationRequired": false
+        "lastError": null,
+        "lastErrorAt": null,
+        "reconciliationRequired": false,
+        "bufferStatus": "scheduled",
+        "bufferPostId": "6abfc0f5e11203baed2afaea",
+        "transferredAt": "2026-10-02T14:34:29.477Z",
+        "dueAt": "2026-10-06T12:00:00.000Z"
       },
       "instagram": {
         "status": "failed",
