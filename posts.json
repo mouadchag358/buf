@@ -19,7 +19,7 @@
         "bufferPostId": "6abfbf923ac90aaf27cd8f63",
         "transferredAt": "2026-10-02T14:28:34.294Z",
         "dueAt": "2026-10-03T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-02T14:34:27.957Z"
+        "lastCheckedAt": "2026-10-02T14:36:36.868Z"
       },
       "instagram": {
         "status": "scheduled_in_buffer",
@@ -33,7 +33,8 @@
         "bufferStatus": "scheduled",
         "bufferPostId": "6abfc0f5e11203baed2afb8a",
         "transferredAt": "2026-10-02T14:34:29.954Z",
-        "dueAt": "2026-10-03T08:00:00.000Z"
+        "dueAt": "2026-10-03T08:00:00.000Z",
+        "lastCheckedAt": "2026-10-02T14:36:36.873Z"
       }
     }
   },
@@ -57,7 +58,7 @@
         "bufferPostId": "6abfbf923ac90aaf27cd8f8c",
         "transferredAt": "2026-10-02T14:28:34.946Z",
         "dueAt": "2026-10-03T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-02T14:34:27.964Z"
+        "lastCheckedAt": "2026-10-02T14:36:36.952Z"
       },
       "instagram": {
         "status": "scheduled_in_buffer",
@@ -71,7 +72,8 @@
         "bufferStatus": "scheduled",
         "bufferPostId": "6abfc0f60adf17f48c4e6339",
         "transferredAt": "2026-10-02T14:34:30.392Z",
-        "dueAt": "2026-10-03T12:00:00.000Z"
+        "dueAt": "2026-10-03T12:00:00.000Z",
+        "lastCheckedAt": "2026-10-02T14:36:37.012Z"
       }
     }
   },
@@ -95,17 +97,21 @@
         "bufferPostId": "6abfbf933ac90aaf27cd8fb5",
         "transferredAt": "2026-10-02T14:28:35.340Z",
         "dueAt": "2026-10-04T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-02T14:34:27.970Z"
+        "lastCheckedAt": "2026-10-02T14:36:37.073Z"
       },
       "instagram": {
-        "status": "failed",
+        "status": "scheduled_in_buffer",
         "channelId": "6ab6749aea19ca0bdee546fa",
         "channel": "instagram",
-        "attemptedAt": "2026-10-02T13:45:22.921Z",
+        "attemptedAt": "2026-10-02T14:36:37.807Z",
         "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/library/pack%20premuim.png",
-        "lastError": "Quota Buffer atteint.",
-        "lastErrorAt": "2026-10-02T13:45:22.957Z",
-        "reconciliationRequired": false
+        "lastError": null,
+        "lastErrorAt": null,
+        "reconciliationRequired": false,
+        "bufferStatus": "scheduled",
+        "bufferPostId": "6abfc1753ac90aaf27cdd5e2",
+        "transferredAt": "2026-10-02T14:36:38.048Z",
+        "dueAt": "2026-10-04T08:00:00.000Z"
       }
     }
   },
@@ -129,17 +135,21 @@
         "bufferPostId": "6abfbf938eb909c659e0f7a2",
         "transferredAt": "2026-10-02T14:28:35.773Z",
         "dueAt": "2026-10-04T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-02T14:34:27.975Z"
+        "lastCheckedAt": "2026-10-02T14:36:37.076Z"
       },
       "instagram": {
-        "status": "failed",
+        "status": "scheduled_in_buffer",
         "channelId": "6ab6749aea19ca0bdee546fa",
         "channel": "instagram",
-        "attemptedAt": "2026-10-02T13:45:22.966Z",
+        "attemptedAt": "2026-10-02T14:36:38.190Z",
         "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/library/Image%20ChatGPT%2028%20sept.%202026%2C%2013_31_20-9.png",
-        "lastError": "Quota Buffer atteint.",
-        "lastErrorAt": "2026-10-02T13:45:23.010Z",
-        "reconciliationRequired": false
+        "lastError": null,
+        "lastErrorAt": null,
+        "reconciliationRequired": false,
+        "bufferStatus": "scheduled",
+        "bufferPostId": "6abfc1765f7061ee2f19bc43",
+        "transferredAt": "2026-10-02T14:36:38.433Z",
+        "dueAt": "2026-10-04T12:00:00.000Z"
       }
     }
   },
@@ -163,7 +173,7 @@
         "bufferPostId": "6abfbf94e11203baed2ac984",
         "transferredAt": "2026-10-02T14:28:36.257Z",
         "dueAt": "2026-10-05T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-02T14:34:27.980Z"
+        "lastCheckedAt": "2026-10-02T14:36:37.080Z"
       },
       "instagram": {
         "status": "failed",
@@ -196,7 +206,8 @@
         "bufferStatus": "scheduled",
         "bufferPostId": "6abfc0f43ac90aaf27cdc5ba",
         "transferredAt": "2026-10-02T14:34:28.614Z",
-        "dueAt": "2026-10-05T12:00:00.000Z"
+        "dueAt": "2026-10-05T12:00:00.000Z",
+        "lastCheckedAt": "2026-10-02T14:36:37.084Z"
       },
       "instagram": {
         "status": "failed",
@@ -229,7 +240,8 @@
         "bufferStatus": "scheduled",
         "bufferPostId": "6abfc0f45f7061ee2f19aed2",
         "transferredAt": "2026-10-02T14:34:29.033Z",
-        "dueAt": "2026-10-06T08:00:00.000Z"
+        "dueAt": "2026-10-06T08:00:00.000Z",
+        "lastCheckedAt": "2026-10-02T14:36:37.088Z"
       },
       "instagram": {
         "status": "failed",
@@ -262,7 +274,8 @@
         "bufferStatus": "scheduled",
         "bufferPostId": "6abfc0f5e11203baed2afaea",
         "transferredAt": "2026-10-02T14:34:29.477Z",
-        "dueAt": "2026-10-06T12:00:00.000Z"
+        "dueAt": "2026-10-06T12:00:00.000Z",
+        "lastCheckedAt": "2026-10-02T14:36:37.091Z"
       },
       "instagram": {
         "status": "failed",
@@ -284,14 +297,18 @@
     "scheduledAt": "2026-10-07T08:00:00.000Z",
     "deliveries": {
       "facebook": {
-        "status": "failed",
+        "status": "scheduled_in_buffer",
         "channelId": "6ab674f7ea19ca0bdee54b05",
         "channel": "facebook",
-        "attemptedAt": "2026-10-02T13:45:05.972Z",
+        "attemptedAt": "2026-10-02T14:36:37.256Z",
         "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/library/Image%20ChatGPT%2028%20sept.%202026%2C%2013_30_07-1.png",
-        "lastError": "Invalid post: Facebook posts require a type (post, story, or reel).",
-        "lastErrorAt": "2026-10-02T13:45:06.056Z",
-        "reconciliationRequired": false
+        "lastError": null,
+        "lastErrorAt": null,
+        "reconciliationRequired": false,
+        "bufferStatus": "scheduled",
+        "bufferPostId": "6abfc175441850db6e7219b4",
+        "transferredAt": "2026-10-02T14:36:37.658Z",
+        "dueAt": "2026-10-07T08:00:00.000Z"
       },
       "instagram": {
         "status": "failed",
