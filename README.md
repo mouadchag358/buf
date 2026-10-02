@@ -22,6 +22,9 @@ Le workflow utilise les canaux suivants :
 
 - `.github/workflows/buffer-sync.yml` lance la synchronisation toutes les six heures et peut aussi être déclenché manuellement depuis l'onglet **Actions**.
 - Les images référencées par `posts.json` sont servies directement depuis `images/library` avec les URL publiques GitHub.
+- Chaque exécution examine au maximum cinq nouvelles livraisons, tous canaux confondus (`BUFFER_MAX_ATTEMPTS`). Une erreur de création Buffer arrête les envois pour cette exécution ; les quotas épuisés ne sont pas retentés.
+- Le type `post` est transmis dans les métadonnées Facebook et Instagram, avec `shouldShareToFeed: true` pour Instagram. Seules les publications avec image sont prises en charge.
+- Le workflow échoue en cas d’erreurs et sauvegarde quand même les envois déjà effectués pour éviter les doublons.
 - Chaque canal conserve au maximum dix publications en attente dans Buffer.
 - Après une synchronisation, le workflow valide dans Git les identifiants Buffer enregistrés dans `posts.json`. Cela empêche les doublons entre deux exécutions GitHub Actions.
 - Une réponse incertaine de Buffer est bloquée et nécessite une vérification manuelle avant toute nouvelle tentative.

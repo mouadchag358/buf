@@ -6,6 +6,7 @@ const {
   TIME_ZONE,
   BUFFER_ORGANIZATION_ID,
   BUFFER_MAX_SCHEDULED,
+  BUFFER_MAX_ATTEMPTS,
   MAX_IMAGE_BYTES,
   PUBLIC_MEDIA_REPOSITORY,
   PUBLIC_MEDIA_REF
@@ -125,6 +126,7 @@ class BufferSync {
     dryRun = false,
     now = () => new Date(),
     validate = validateMedia,
+    maxAttempts = BUFFER_MAX_ATTEMPTS,
     maxScheduled = BUFFER_MAX_SCHEDULED
   } = {}) {
     this.store = store;
@@ -133,6 +135,7 @@ class BufferSync {
     this.now = now;
     this.validate = validate;
     this.maxScheduled = maxScheduled;
+    this.maxAttempts = maxAttempts;
   }
 
   async saveDelivery(postId, service, changes) {
@@ -148,12 +151,13 @@ class BufferSync {
     return organizations[0].id;
   }
 
-  async reconcileKnownDeliveries(posts) {
+  async reconcileKnownDeliveries(posts, remotePosts) {
     for (const post of posts) {
       for (const [service, delivery] of Object.entries(post.deliveries || {})) {
         if (!delivery.bufferPostId || !["scheduled_in_buffer", "unknown"].includes(delivery.status)) continue;
         try {
-          const remote = await this.client.getPost(delivery.bufferPostId);
+          const remote = remotePosts.find((item) => item.id === delivery.bufferPostId);
+          if (!remote) continue;
           const checkedAt = this.now().toISOString();
           await this.saveDelivery(post.id, service, {
             bufferStatus: remote.status,
@@ -176,37 +180,44 @@ class BufferSync {
     const channels = channelSelection(allChannels);
     if (!channels.length) throw new Error("Aucun canal Facebook ou Instagram Buffer utilisable.");
     const posts = this.store.read();
-    await this.reconcileKnownDeliveries(posts);
 
     const remotePosts = await this.client.getPosts(
       organizationId,
       channels.map((channel) => channel.id),
       ["scheduled", "sending", "sent", "error"]
     );
+    await this.reconcileKnownDeliveries(posts, remotePosts);
     const summaries = [];
+    let attempts = 0;
+    let stopped = false;
 
     for (const channel of channels) {
       const queued = remotePosts.filter((post) => post.channelId === channel.id && ["scheduled", "sending"].includes(post.status));
       let available = Math.max(0, this.maxScheduled - queued.length);
       const summary = { channel: channel.service, channelId: channel.id, queued: queued.length, available, planned: 0, transferred: 0, errors: [] };
       summaries.push(summary);
-      if (channel.isQueuePaused) summary.errors.push("La file Buffer est en pause.");
-      if (!available) continue;
+      if (channel.isQueuePaused) {
+        summary.errors.push("La file Buffer est en pause.");
+        continue;
+      }
+      if (!available || stopped) continue;
 
       for (const post of posts) {
-        if (!available) break;
+        if (!available || attempts >= this.maxAttempts || stopped) break;
         const services = targetServices(post, new Set(channels.map((item) => item.service)));
         if (!services.includes(channel.service)) continue;
         const current = post.deliveries?.[channel.service];
         if (["scheduled_in_buffer", "published", "failed_in_buffer"].includes(current?.status)) continue;
 
+        if (current?.status === "past_due" && current.scheduledAt === post.scheduledAt) continue;
+        attempts += 1;
         let imageUrl;
         try {
           imageUrl = mediaUrl(post.image);
           const dueAt = isoFromLocal(post.scheduledAt);
           if (dueAt && new Date(dueAt) <= this.now()) {
             const message = `Date dépassée (${dueAt}) : aucun envoi immédiat.`;
-            await this.saveDelivery(post.id, channel.service, { status: "past_due", lastError: message, lastErrorAt: this.now().toISOString() });
+            await this.saveDelivery(post.id, channel.service, { status: "past_due", scheduledAt: post.scheduledAt, lastError: message, lastErrorAt: this.now().toISOString() });
             summary.errors.push(`${post.id}: ${message}`);
             continue;
           }
@@ -216,7 +227,7 @@ class BufferSync {
           const existing = remotePosts.find((remote) => remote.channelId === channel.id && matchesRemote(post, imageUrl, remote));
           if (existing) {
             await this.saveDelivery(post.id, channel.service, deliveryFromRemote(existing, channel, this.now().toISOString()));
-            if (["scheduled", "sending"].includes(existing.status)) available -= 1;
+            // La file distante a déjà été comptée avant la boucle.
             continue;
           }
 
@@ -238,7 +249,7 @@ class BufferSync {
             attemptedAt: this.now().toISOString(), imageUrl, lastError: null
           });
           try {
-            const created = await this.client.createPost({ channelId: channel.id, text: post.text, imageUrl, dueAt });
+            const created = await this.client.createPost({ channelId: channel.id, text: post.text, imageUrl, dueAt, service: channel.service, type: post.type || "post" });
             await this.saveDelivery(post.id, channel.service, deliveryFromRemote(created, channel, this.now().toISOString()));
             summary.transferred += 1;
             available -= 1;
@@ -250,6 +261,7 @@ class BufferSync {
               reconciliationRequired: Boolean(error.uncertain)
             });
             summary.errors.push(`${post.id}: ${error.message}`);
+            stopped = true;
           }
         } catch (error) {
           await this.saveDelivery(post.id, channel.service, {
@@ -264,7 +276,10 @@ class BufferSync {
 
     const lowQuota = this.client.lastRateLimits.filter((limit) => limit.remaining <= 10);
     if (lowQuota.length) console.warn(`Quota Buffer faible : ${lowQuota.map((item) => `${item.name}=${item.remaining}`).join(", ")}`);
-    console.log(JSON.stringify({ dryRun: this.dryRun, organizationId, summaries }, null, 2));
+    console.log(JSON.stringify({ dryRun: this.dryRun, organizationId, attempts, maxAttempts: this.maxAttempts, stopped, summaries }, null, 2));
+    if (summaries.some((summary) => summary.errors.length)) {
+      throw Object.assign(new Error("Synchronisation incomplète : consultez les erreurs ci-dessus. Les envois réussis ont été sauvegardés."), { summaries });
+    }
     return summaries;
   }
 }

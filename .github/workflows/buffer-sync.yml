@@ -27,6 +27,7 @@ jobs:
       PUBLIC_MEDIA_REF: ${{ github.ref_name }}
 
       TIME_ZONE: Africa/Casablanca
+      BUFFER_MAX_ATTEMPTS: 5
 
     steps:
       - name: Récupérer le dépôt
@@ -47,9 +48,11 @@ jobs:
         run: npm test
 
       - name: Synchroniser vers Buffer
+        id: buffer_sync
         run: npm run buffer:sync
 
       - name: Enregistrer l'état Buffer
+        if: ${{ always() && steps.buffer_sync.outcome != 'skipped' }}
         shell: bash
         run: |
           if git diff --quiet -- posts.json; then
