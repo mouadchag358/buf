@@ -72,30 +72,34 @@ test("la validation média utilise la taille totale d'une réponse partielle", a
   );
 });
 
-test("le client Buffer retente un quota temporaire et transmet une image", async () => {
+test("le client transmet les métadonnées Facebook et Instagram avec une image", async () => {
   const requests = [];
-  let calls = 0;
   const client = new BufferClient({
     apiKey: "secret-test",
-    sleep: async () => {},
     fetchImpl: async (_url, options) => {
       requests.push(JSON.parse(options.body));
-      calls += 1;
-      if (calls === 1) return response({ status: 429, headers: { "retry-after": "1" } });
       return response({ payload: { data: { createPost: { post: { id: "buffer-1", status: "scheduled" } } } } });
     }
   });
-
-  const created = await client.createPost({
-    channelId: "channel-1",
-    text: "Bonjour",
-    imageUrl: "https://example.test/photo.jpg",
-    dueAt: "2026-10-03T08:00:00.000Z"
-  });
-  assert.equal(created.id, "buffer-1");
-  assert.equal(calls, 2);
+  for (const service of ["facebook", "instagram"]) {
+    await client.createPost({ channelId: "channel-1", text: "Bonjour", imageUrl: "https://example.test/photo.jpg",
+      dueAt: "2026-10-03T08:00:00.000Z", service });
+  }
+  assert.deepEqual(requests[0].variables.input.metadata, { facebook: { type: "post" } });
+  assert.deepEqual(requests[1].variables.input.metadata, { instagram: { type: "post", shouldShareToFeed: true } });
   assert.deepEqual(requests[1].variables.input.assets, [{ image: { url: "https://example.test/photo.jpg" } }]);
   assert.equal(requests[1].variables.input.mode, "customScheduled");
+});
+
+test("un HTTP 429 arrête immédiatement les requêtes, même avec retry-after court", async () => {
+  let calls = 0;
+  const client = new BufferClient({ apiKey: "test", fetchImpl: async () => {
+    calls += 1;
+    return response({ status: 429, headers: { "retry-after": "1", ratelimit: '\"100-in-15min\";r=0;t=1' } });
+  } });
+  await assert.rejects(client.getOrganizations(), (error) => error.code === "RATE_LIMIT_EXCEEDED" && error.retryAfterSeconds === 1);
+  await assert.rejects(client.getOrganizations(), (error) => error.code === "RATE_LIMIT_EXCEEDED");
+  assert.equal(calls, 1);
 });
 
 test("une coupure pendant une mutation est marquée comme incertaine", async () => {
@@ -104,7 +108,7 @@ test("une coupure pendant une mutation est marquée comme incertaine", async () 
     fetchImpl: async () => { throw new Error("coupure"); }
   });
   await assert.rejects(
-    client.createPost({ channelId: "channel-1", text: "Bonjour", imageUrl: "https://example.test/a.jpg" }),
+    client.createPost({ service: "facebook", channelId: "channel-1", text: "Bonjour", imageUrl: "https://example.test/a.jpg" }),
     (error) => error instanceof BufferApiError && error.uncertain === true
   );
 });
@@ -142,9 +146,8 @@ test("la synchronisation ne duplique pas un envoi Buffer incertain", async (cont
     now: () => new Date("2026-09-30T12:00:00.000Z"),
     validate: async () => {}
   });
-  const [summary] = await sync.run();
+  await assert.rejects(sync.run(), (error) => /incertain/.test(error.summaries[0].errors[0]));
   assert.equal(createCalls, 0);
-  assert.match(summary.errors[0], /incertain/);
   assert.equal(store.read()[0].deliveries.facebook.status, "unknown");
 });
 
@@ -178,4 +181,46 @@ test("la synchronisation crée puis mémorise un post Buffer", async (context) =
   assert.equal(delivery.status, "scheduled_in_buffer");
   assert.equal(delivery.bufferPostId, "buffer-2");
   assertCasablancaNine(delivery.dueAt);
+});
+
+for (const failure of [null, "RATE_LIMIT_EXCEEDED", "MUTATION_ERROR"]) {
+  test(`la synchronisation borne les tentatives et conserve les réussites (${failure})`, async (context) => {
+    ignoreConfiguredChannels(context);
+    const posts = Array.from({ length: 242 }, (_, id) => ({ id, text: `Post ${id}`, image: "https://example.test/a.jpg" }));
+    const { directory, store } = temporaryStore(posts);
+    context.after(() => fs.rmSync(directory, { recursive: true, force: true }));
+    let calls = 0;
+    const client = {
+      lastRateLimits: [],
+      getOrganizations: async () => [{ id: "org" }],
+      getChannels: async () => [{ id: "fb", service: "facebook" }, { id: "ig", service: "instagram" }],
+      getPosts: async () => [],
+      createPost: async (input) => {
+        calls += 1;
+        if (failure && calls === 2) throw new BufferApiError("échec", { code: failure });
+        assert.ok(["facebook", "instagram"].includes(input.service));
+        return { id: `remote-${calls}`, status: "scheduled" };
+      }
+    };
+    const sync = new BufferSync({ store, client, validate: async () => {}, maxAttempts: 5 });
+    if (failure) await assert.rejects(sync.run(), /Synchronisation incomplète/);
+    else await sync.run();
+    assert.equal(calls, failure ? 2 : 5);
+    assert.equal(store.read()[0].deliveries.facebook.bufferPostId, "remote-1");
+    assert.equal(store.read()[failure ? 2 : 5].deliveries, undefined);
+  });
+}
+
+test("la réconciliation réutilise la liste distante sans requête par publication", async (context) => {
+  ignoreConfiguredChannels(context);
+  const { directory, store } = temporaryStore([{ id: "p", text: "Bonjour", image: "https://example.test/a.jpg",
+    deliveries: { facebook: { status: "scheduled_in_buffer", bufferPostId: "remote" } } }]);
+  context.after(() => fs.rmSync(directory, { recursive: true, force: true }));
+  const client = { lastRateLimits: [], getOrganizations: async () => [{ id: "org" }],
+    getChannels: async () => [{ id: "fb", service: "facebook" }],
+    getPosts: async () => [{ id: "remote", channelId: "fb", status: "sent" }],
+    getPost: async () => { throw new Error("Requête inutile"); },
+    createPost: async () => { throw new Error("Doublon"); } };
+  await new BufferSync({ store, client }).run();
+  assert.equal(store.read()[0].deliveries.facebook.status, "published");
 });

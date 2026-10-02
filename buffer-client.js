@@ -67,76 +67,71 @@ class BufferClient {
     apiKey = process.env.BUFFER_API_KEY,
     endpoint = BUFFER_API_URL,
     timeoutMs = BUFFER_REQUEST_TIMEOUT_MS,
-    fetchImpl = global.fetch,
-    sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+    fetchImpl = global.fetch
   } = {}) {
     this.apiKey = apiKey;
     this.endpoint = endpoint;
     this.timeoutMs = timeoutMs;
     this.fetch = fetchImpl;
-    this.sleep = sleep;
     this.lastRateLimits = [];
   }
 
   async request(query, variables = {}, { mutation = false } = {}) {
     if (!this.apiKey) throw new BufferApiError("BUFFER_API_KEY est absent.", { code: "CONFIGURATION" });
-    for (let attempt = 1; attempt <= 3; attempt += 1) {
-      let response;
-      try {
-        response = await this.fetch(this.endpoint, {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${this.apiKey}`,
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ query, variables }),
-          signal: AbortSignal.timeout(this.timeoutMs)
-        });
-      } catch (error) {
-        // Après l'envoi d'une mutation, une coupure réseau laisse le résultat incertain.
-        throw new BufferApiError(
-          mutation ? "Réponse Buffer incertaine après la création." : "Buffer est injoignable.",
-          { code: "NETWORK", uncertain: mutation, status: error.name }
-        );
-      }
-
-      this.lastRateLimits = parseRateLimits(response.headers.get("ratelimit"));
-      const retryAfterSeconds = Number(response.headers.get("retry-after"));
-      if (response.status === 429) {
-        if (attempt < 3 && retryAfterSeconds > 0 && retryAfterSeconds <= 60) {
-          await this.sleep((retryAfterSeconds * 1000) + Math.floor(Math.random() * 1000));
-          continue;
-        }
-        throw new BufferApiError("Quota Buffer atteint.", {
-          code: "RATE_LIMIT_EXCEEDED", retryAfterSeconds, status: 429
-        });
-      }
-
-      let payload;
-      try {
-        payload = await response.json();
-      } catch {
-        throw new BufferApiError(`Réponse Buffer illisible (HTTP ${response.status}).`, {
-          code: "INVALID_RESPONSE", uncertain: mutation && response.ok, status: response.status
-        });
-      }
-      if (!response.ok) {
-        throw new BufferApiError(`Buffer a répondu HTTP ${response.status}.`, {
-          code: payload.errors?.[0]?.extensions?.code || "HTTP_ERROR",
-          uncertain: mutation && response.status >= 500,
-          status: response.status
-        });
-      }
-      if (payload.errors?.length) {
-        const first = payload.errors[0];
-        throw new BufferApiError(`Erreur GraphQL Buffer (${first.extensions?.code || "UNKNOWN"}).`, {
-          code: first.extensions?.code,
-          uncertain: mutation && ["UNEXPECTED", "INTERNAL_SERVER_ERROR"].includes(first.extensions?.code)
-        });
-      }
-      return payload.data;
+    const exhausted = this.lastRateLimits.find((limit) => limit.remaining <= 0);
+    if (exhausted) throw new BufferApiError(`Quota Buffer atteint. Attendre ${exhausted.resetsInSeconds} secondes.`, {
+      code: "RATE_LIMIT_EXCEEDED", retryAfterSeconds: exhausted.resetsInSeconds, status: 429
+    });
+    let response;
+    try {
+      response = await this.fetch(this.endpoint, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${this.apiKey}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ query, variables }),
+        signal: AbortSignal.timeout(this.timeoutMs)
+      });
+    } catch (error) {
+      // Après l'envoi d'une mutation, une coupure réseau laisse le résultat incertain.
+      throw new BufferApiError(
+        mutation ? "Réponse Buffer incertaine après la création." : "Buffer est injoignable.",
+        { code: "NETWORK", uncertain: mutation, status: error.name }
+      );
     }
-    throw new BufferApiError("Buffer indisponible après plusieurs tentatives.");
+
+    this.lastRateLimits = parseRateLimits(response.headers.get("ratelimit"));
+    const retryAfterSeconds = Number(response.headers.get("retry-after"));
+    if (response.status === 429) {
+      throw new BufferApiError(`Quota Buffer atteint. Attendre ${retryAfterSeconds || "le délai indiqué par Buffer"} secondes.`, {
+        code: "RATE_LIMIT_EXCEEDED", retryAfterSeconds, status: 429
+      });
+    }
+
+    let payload;
+    try {
+      payload = await response.json();
+    } catch {
+      throw new BufferApiError(`Réponse Buffer illisible (HTTP ${response.status}).`, {
+        code: "INVALID_RESPONSE", uncertain: mutation && (response.ok || response.status >= 500), status: response.status
+      });
+    }
+    if (!response.ok) {
+      throw new BufferApiError(`Buffer a répondu HTTP ${response.status}.`, {
+        code: payload.errors?.[0]?.extensions?.code || "HTTP_ERROR",
+        uncertain: mutation && response.status >= 500,
+        status: response.status
+      });
+    }
+    if (payload.errors?.length) {
+      const first = payload.errors[0];
+      throw new BufferApiError(`Erreur GraphQL Buffer (${first.extensions?.code || "UNKNOWN"}).`, {
+        code: first.extensions?.code,
+        uncertain: mutation && ["UNEXPECTED", "INTERNAL_SERVER_ERROR"].includes(first.extensions?.code)
+      });
+    }
+    return payload.data;
   }
 
   async getOrganizations() {
@@ -170,7 +165,7 @@ class BufferClient {
     return (await this.request(POST_QUERY, { input: { id } })).post;
   }
 
-  async createPost({ channelId, text, imageUrl, dueAt }) {
+  async createPost({ channelId, text, imageUrl, dueAt, service, type = "post" }) {
     const input = {
       channelId,
       text,
@@ -178,6 +173,14 @@ class BufferClient {
       mode: dueAt ? "customScheduled" : "addToQueue",
       assets: [{ image: { url: imageUrl } }]
     };
+    if (!["facebook", "instagram"].includes(service)) {
+      throw new BufferApiError("Réseau Buffer manquant ou non pris en charge.", { code: "CONFIGURATION" });
+    }
+    // Cette intégration ne prend en charge que les publications avec image.
+    if (type !== "post") throw new BufferApiError("Seul le type post est pris en charge pour ces images.", { code: "CONFIGURATION" });
+    input.metadata = { [service]: service === "instagram"
+      ? { type, shouldShareToFeed: true }
+      : { type } };
     if (dueAt) input.dueAt = dueAt;
     const data = await this.request(CREATE_POST_MUTATION, { input }, { mutation: true });
     if (!data.createPost.post) {
