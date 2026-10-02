@@ -1,6 +1,6 @@
 # Planificateur Buffer
 
-Ce dépôt envoie automatiquement les publications de `posts.json` vers les canaux Facebook et Instagram connectés à Buffer. Il n'héberge aucun serveur et ne contient plus de tableau de bord : GitHub Actions exécute la synchronisation toutes les six heures.
+Ce dépôt envoie automatiquement les publications de `posts.json` vers les canaux Facebook et Instagram connectés à Buffer. Il n'héberge aucun serveur et ne contient plus de tableau de bord : GitHub Actions exécute la synchronisation toutes les dix heures.
 
 ## Configuration GitHub
 
@@ -20,7 +20,8 @@ Le workflow utilise les canaux suivants :
 
 ## Fonctionnement
 
-- `.github/workflows/buffer-sync.yml` lance la synchronisation toutes les six heures et peut aussi être déclenché manuellement depuis l'onglet **Actions**.
+- `.github/workflows/buffer-sync.yml` lance la synchronisation toutes les dix heures et peut aussi être déclenché manuellement depuis l'onglet **Actions**.
+- GitHub vérifie le créneau chaque heure à la minute 17, puis lance la synchronisation un créneau sur dix, avec un repère fixe au 2 octobre 2026 à 00h UTC. Cela évite les intervalles de quatre heures à minuit produits par `*/10`. Exemple : 2 octobre à 20h17 UTC, 3 octobre à 06h17 et 16h17 UTC, 4 octobre à 02h17 UTC. Les démarrages peuvent être retardés par GitHub ; un contrôle reporté hors de son créneau horaire peut être ignoré. Le déclenchement manuel ignore ce filtre.
 - Les images référencées par `posts.json` sont servies directement depuis `images/library` avec les URL publiques GitHub.
 - Chaque exécution examine au maximum cinq nouvelles livraisons, tous canaux confondus (`BUFFER_MAX_ATTEMPTS`). Le budget est partagé entre les canaux actifs : avec cinq tentatives et deux canaux, Facebook en reçoit trois et Instagram deux. Un canal plein, en pause ou sans publication candidate ne réserve pas de tentatives. Une erreur de création Buffer arrête les envois pour cette exécution ; les quotas épuisés ne sont pas retentés.
 - Le type `post` est transmis dans les métadonnées Facebook et Instagram, avec `shouldShareToFeed: true` pour Instagram. Seules les publications avec image sont prises en charge.
