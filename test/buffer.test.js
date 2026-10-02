@@ -190,6 +190,7 @@ for (const failure of [null, "RATE_LIMIT_EXCEEDED", "MUTATION_ERROR"]) {
     const { directory, store } = temporaryStore(posts);
     context.after(() => fs.rmSync(directory, { recursive: true, force: true }));
     let calls = 0;
+    const services = [];
     const client = {
       lastRateLimits: [],
       getOrganizations: async () => [{ id: "org" }],
@@ -197,6 +198,7 @@ for (const failure of [null, "RATE_LIMIT_EXCEEDED", "MUTATION_ERROR"]) {
       getPosts: async () => [],
       createPost: async (input) => {
         calls += 1;
+        services.push(input.service);
         if (failure && calls === 2) throw new BufferApiError("échec", { code: failure });
         assert.ok(["facebook", "instagram"].includes(input.service));
         return { id: `remote-${calls}`, status: "scheduled" };
@@ -207,7 +209,8 @@ for (const failure of [null, "RATE_LIMIT_EXCEEDED", "MUTATION_ERROR"]) {
     else await sync.run();
     assert.equal(calls, failure ? 2 : 5);
     assert.equal(store.read()[0].deliveries.facebook.bufferPostId, "remote-1");
-    assert.equal(store.read()[failure ? 2 : 5].deliveries, undefined);
+    assert.equal(store.read()[failure ? 2 : 3].deliveries, undefined);
+    if (!failure) assert.deepEqual(services, ["facebook", "facebook", "facebook", "instagram", "instagram"]);
   });
 }
 
@@ -224,3 +227,23 @@ test("la réconciliation réutilise la liste distante sans requête par publicat
   await new BufferSync({ store, client }).run();
   assert.equal(store.read()[0].deliveries.facebook.status, "published");
 });
+
+for (const reason of ["full", "paused", "no-candidates"]) {
+  test(`Instagram utilise les cinq tentatives quand Facebook est indisponible (${reason})`, async (context) => {
+    ignoreConfiguredChannels(context);
+    const posts = Array.from({ length: 6 }, (_, id) => ({ id, text: `Post ${id}`, image: "https://example.test/a.jpg",
+      ...(reason === "no-candidates" ? { targetNetworks: ["instagram"] } : {}) }));
+    const { directory, store } = temporaryStore(posts);
+    context.after(() => fs.rmSync(directory, { recursive: true, force: true }));
+    const services = [];
+    const client = { lastRateLimits: [], getOrganizations: async () => [{ id: "org" }],
+      getChannels: async () => [{ id: "fb", service: "facebook", isQueuePaused: reason === "paused" }, { id: "ig", service: "instagram" }],
+      getPosts: async () => reason === "full" ? Array.from({ length: 10 }, (_, id) => ({ id: `queued-${id}`, channelId: "fb", status: "scheduled" })) : [],
+      createPost: async (input) => { services.push(input.service); return { id: `remote-${services.length}`, status: "scheduled" }; }
+    };
+    const sync = new BufferSync({ store, client, validate: async () => {}, maxAttempts: 5 });
+    if (reason === "paused") await assert.rejects(sync.run(), /Synchronisation incomplète/);
+    else await sync.run();
+    assert.deepEqual(services, Array(5).fill("instagram"));
+  });
+}
