@@ -15,28 +15,68 @@ concurrency:
 jobs:
   cadence:
     runs-on: ubuntu-latest
-    timeout-minutes: 2
-    permissions:
-      contents: read
+    timeout-minutes: 5
     outputs:
       run_sync: ${{ steps.interval.outputs.run_sync }}
     steps:
-      - name: Vérifier l'intervalle de dix heures
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v7
+
+      - name: Vérifier si 10 heures se sont écoulées
         id: interval
         shell: bash
         run: |
           if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
             echo "run_sync=true" >> "$GITHUB_OUTPUT"
+            echo "Déclenchement manuel : synchronisation forcée."
             exit 0
           fi
-          # Repère fixe UTC : conserve dix heures entre créneaux, même à minuit.
-          anchor=$(date -u -d '2026-10-02T00:00:00Z' +%s)
-          elapsed_hours=$(( ($(date -u +%s) - anchor) / 3600 ))
-          if (( elapsed_hours >= 0 && elapsed_hours % 10 == 0 )); then
-            echo "run_sync=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "run_sync=false" >> "$GITHUB_OUTPUT"
-          fi
+
+          node <<'NODE'
+          const fs = require("fs");
+
+          let posts = [];
+          try {
+            posts = JSON.parse(fs.readFileSync("posts.json", "utf8"));
+          } catch (error) {
+            console.log("posts.json absent ou illisible : synchronisation autorisée.");
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, "run_sync=true\n");
+            process.exit(0);
+          }
+
+          const timestamps = [];
+          for (const post of posts) {
+            for (const delivery of Object.values(post.deliveries || {})) {
+              for (const key of ["lastCheckedAt", "transferredAt", "attemptedAt", "publishedAt"]) {
+                const value = delivery?.[key];
+                if (!value) continue;
+                const time = Date.parse(value);
+                if (Number.isFinite(time)) timestamps.push(time);
+              }
+            }
+          }
+
+          if (!timestamps.length) {
+            console.log("Aucune synchronisation Buffer précédente trouvée.");
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, "run_sync=true\n");
+            process.exit(0);
+          }
+
+          const lastSync = Math.max(...timestamps);
+          const elapsedMs = Date.now() - lastSync;
+          const tenHoursMs = 10 * 60 * 60 * 1000;
+
+          console.log("Dernière activité Buffer :", new Date(lastSync).toISOString());
+          console.log("Heures écoulées :", (elapsedMs / 3600000).toFixed(2));
+
+          if (elapsedMs >= tenHoursMs) {
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, "run_sync=true\n");
+            console.log("10 heures ou plus : synchronisation autorisée.");
+          } else {
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, "run_sync=false\n");
+            console.log("Moins de 10 heures : synchronisation ignorée.");
+          }
+          NODE
 
   sync:
     needs: cadence
@@ -93,5 +133,5 @@ jobs:
           git add posts.json
           git commit -m "chore: persist Buffer sync state"
 
-          git pull --rebase
-          git push
+          git pull --rebase -X theirs origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
