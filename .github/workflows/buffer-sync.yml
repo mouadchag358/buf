@@ -22,7 +22,7 @@ jobs:
       - name: Récupérer le dépôt
         uses: actions/checkout@v7
 
-      - name: Vérifier si 10 heures se sont écoulées
+      - name: Vérifier si 1 heure s'est écoulée
         id: interval
         shell: bash
         run: |
@@ -64,17 +64,17 @@ jobs:
 
           const lastSync = Math.max(...timestamps);
           const elapsedMs = Date.now() - lastSync;
-          const tenHoursMs = 10 * 60 * 60 * 1000;
+          const oneHourMs = 60 * 60 * 1000;
 
           console.log("Dernière activité Buffer :", new Date(lastSync).toISOString());
           console.log("Heures écoulées :", (elapsedMs / 3600000).toFixed(2));
 
-          if (elapsedMs >= tenHoursMs) {
+          if (elapsedMs >= oneHourMs) {
             fs.appendFileSync(process.env.GITHUB_OUTPUT, "run_sync=true\n");
-            console.log("10 heures ou plus : synchronisation autorisée.");
+            console.log("1 heure ou plus : synchronisation autorisée.");
           } else {
             fs.appendFileSync(process.env.GITHUB_OUTPUT, "run_sync=false\n");
-            console.log("Moins de 10 heures : synchronisation ignorée.");
+            console.log("Moins de 1 heure : synchronisation ignorée.");
           }
           NODE
 
