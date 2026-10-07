@@ -376,7 +376,7 @@
     "scheduledAt": "2026-10-07T12:00:00.000Z",
     "deliveries": {
       "facebook": {
-        "status": "scheduled_in_buffer",
+        "status": "published",
         "channelId": "6ab674f7ea19ca0bdee54b05",
         "channel": "facebook",
         "attemptedAt": "2026-10-03T21:13:34.155Z",
@@ -384,14 +384,15 @@
         "lastError": null,
         "lastErrorAt": null,
         "reconciliationRequired": false,
-        "bufferStatus": "scheduled",
+        "bufferStatus": "sent",
         "bufferPostId": "6ac16ffe814d657011d6e76e",
         "transferredAt": "2026-10-03T21:13:34.618Z",
         "dueAt": "2026-10-07T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-07T08:36:11.639Z"
+        "lastCheckedAt": "2026-10-07T16:25:09.805Z",
+        "publishedAt": "2026-10-07T16:25:09.805Z"
       },
       "instagram": {
-        "status": "scheduled_in_buffer",
+        "status": "published",
         "channelId": "6ab6749aea19ca0bdee546fa",
         "channel": "instagram",
         "attemptedAt": "2026-10-05T00:54:01.170Z",
@@ -399,11 +400,12 @@
         "lastError": null,
         "lastErrorAt": null,
         "reconciliationRequired": false,
-        "bufferStatus": "scheduled",
+        "bufferStatus": "sent",
         "bufferPostId": "6ac2f529fe1389e413490151",
         "transferredAt": "2026-10-05T00:54:01.534Z",
         "dueAt": "2026-10-07T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-07T08:36:11.644Z"
+        "lastCheckedAt": "2026-10-07T16:25:09.812Z",
+        "publishedAt": "2026-10-07T16:25:09.812Z"
       }
     }
   },
@@ -427,7 +429,7 @@
         "bufferPostId": "6ac16fff7d53b827e0ee5218",
         "transferredAt": "2026-10-03T21:13:35.172Z",
         "dueAt": "2026-10-08T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-07T08:36:11.648Z"
+        "lastCheckedAt": "2026-10-07T16:25:09.817Z"
       },
       "instagram": {
         "status": "scheduled_in_buffer",
@@ -442,7 +444,7 @@
         "bufferPostId": "6ac2f529fe1389e413490196",
         "transferredAt": "2026-10-05T00:54:01.962Z",
         "dueAt": "2026-10-08T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-07T08:36:11.653Z"
+        "lastCheckedAt": "2026-10-07T16:25:09.822Z"
       }
     }
   },
@@ -466,7 +468,7 @@
         "bufferPostId": "6ac16fffad7fd83bc503f409",
         "transferredAt": "2026-10-03T21:13:35.780Z",
         "dueAt": "2026-10-08T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-07T08:36:11.657Z"
+        "lastCheckedAt": "2026-10-07T16:25:09.826Z"
       },
       "instagram": {
         "status": "scheduled_in_buffer",
@@ -481,7 +483,7 @@
         "bufferPostId": "6ac2f52ad467abe8cfcf3bcd",
         "transferredAt": "2026-10-05T00:54:02.393Z",
         "dueAt": "2026-10-08T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-07T08:36:11.661Z"
+        "lastCheckedAt": "2026-10-07T16:25:09.830Z"
       }
     }
   },
@@ -505,7 +507,7 @@
         "bufferPostId": "6ac25050fb26f2c2fb6059c0",
         "transferredAt": "2026-10-04T13:10:40.473Z",
         "dueAt": "2026-10-09T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-07T08:36:11.666Z"
+        "lastCheckedAt": "2026-10-07T16:25:09.835Z"
       },
       "instagram": {
         "status": "scheduled_in_buffer",
@@ -520,7 +522,7 @@
         "bufferPostId": "6ac2f52a69a169193a53ce84",
         "transferredAt": "2026-10-05T00:54:02.891Z",
         "dueAt": "2026-10-09T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-07T08:36:11.670Z"
+        "lastCheckedAt": "2026-10-07T16:25:09.839Z"
       }
     }
   },
@@ -544,7 +546,7 @@
         "bufferPostId": "6ac25050a486988a6e182f1a",
         "transferredAt": "2026-10-04T13:10:40.929Z",
         "dueAt": "2026-10-09T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-07T08:36:11.675Z"
+        "lastCheckedAt": "2026-10-07T16:25:09.844Z"
       },
       "instagram": {
         "status": "scheduled_in_buffer",
@@ -559,7 +561,7 @@
         "bufferPostId": "6ac3c91fb2ce7087b995ba29",
         "transferredAt": "2026-10-05T15:58:23.677Z",
         "dueAt": "2026-10-09T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-07T08:36:11.680Z"
+        "lastCheckedAt": "2026-10-07T16:25:09.848Z"
       }
     }
   },
@@ -583,7 +585,7 @@
         "bufferPostId": "6ac3c91eda066553d7559db1",
         "transferredAt": "2026-10-05T15:58:22.684Z",
         "dueAt": "2026-10-10T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-07T08:36:11.684Z"
+        "lastCheckedAt": "2026-10-07T16:25:09.854Z"
       },
       "instagram": {
         "status": "scheduled_in_buffer",
@@ -598,7 +600,7 @@
         "bufferPostId": "6ac3c91fda066553d7559dda",
         "transferredAt": "2026-10-05T15:58:24.015Z",
         "dueAt": "2026-10-10T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-07T08:36:11.689Z"
+        "lastCheckedAt": "2026-10-07T16:25:09.858Z"
       }
     }
   },
@@ -622,7 +624,7 @@
         "bufferPostId": "6ac3c91f887446fa05fa0f97",
         "transferredAt": "2026-10-05T15:58:23.207Z",
         "dueAt": "2026-10-10T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-07T08:36:11.693Z"
+        "lastCheckedAt": "2026-10-07T16:25:09.862Z"
       },
       "instagram": {
         "status": "scheduled_in_buffer",
@@ -637,7 +639,7 @@
         "bufferPostId": "6ac4638bacc08dcd5e9ef15a",
         "transferredAt": "2026-10-06T02:57:15.347Z",
         "dueAt": "2026-10-10T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-07T08:36:11.698Z"
+        "lastCheckedAt": "2026-10-07T16:25:09.867Z"
       }
     }
   },
@@ -661,7 +663,7 @@
         "bufferPostId": "6ac5260cd2a44aef5fd5dfcb",
         "transferredAt": "2026-10-06T16:47:09.014Z",
         "dueAt": "2026-10-11T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-07T08:36:11.703Z"
+        "lastCheckedAt": "2026-10-07T16:25:09.871Z"
       },
       "instagram": {
         "status": "scheduled_in_buffer",
@@ -676,7 +678,7 @@
         "bufferPostId": "6ac5260d8815e4f75703f4dd",
         "transferredAt": "2026-10-06T16:47:10.147Z",
         "dueAt": "2026-10-11T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-07T08:36:11.707Z"
+        "lastCheckedAt": "2026-10-07T16:25:09.875Z"
       }
     }
   },
@@ -700,7 +702,7 @@
         "bufferPostId": "6ac5260d0231af6af7b9b274",
         "transferredAt": "2026-10-06T16:47:09.793Z",
         "dueAt": "2026-10-11T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-07T08:36:11.714Z"
+        "lastCheckedAt": "2026-10-07T16:25:09.880Z"
       },
       "instagram": {
         "status": "scheduled_in_buffer",
@@ -715,7 +717,7 @@
         "bufferPostId": "6ac5260e61c22f8369bcbcc3",
         "transferredAt": "2026-10-06T16:47:10.495Z",
         "dueAt": "2026-10-11T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-07T08:36:11.722Z"
+        "lastCheckedAt": "2026-10-07T16:25:09.885Z"
       }
     }
   },
@@ -738,7 +740,8 @@
         "bufferStatus": "scheduled",
         "bufferPostId": "6ac6047cfe1a05e1b35214dc",
         "transferredAt": "2026-10-07T08:36:12.272Z",
-        "dueAt": "2026-10-12T08:00:00.000Z"
+        "dueAt": "2026-10-12T08:00:00.000Z",
+        "lastCheckedAt": "2026-10-07T16:25:09.889Z"
       },
       "instagram": {
         "status": "scheduled_in_buffer",
@@ -752,7 +755,8 @@
         "bufferStatus": "scheduled",
         "bufferPostId": "6ac6047c80c60f5e63359bec",
         "transferredAt": "2026-10-07T08:36:12.567Z",
-        "dueAt": "2026-10-12T08:00:00.000Z"
+        "dueAt": "2026-10-12T08:00:00.000Z",
+        "lastCheckedAt": "2026-10-07T16:25:09.896Z"
       }
     }
   },
@@ -764,24 +768,32 @@
     "scheduledAt": "2026-10-12T12:00:00.000Z",
     "deliveries": {
       "facebook": {
-        "status": "failed",
+        "status": "scheduled_in_buffer",
         "channelId": "6ab674f7ea19ca0bdee54b05",
         "channel": "facebook",
-        "attemptedAt": "2026-10-02T13:45:07.979Z",
+        "attemptedAt": "2026-10-07T16:25:10.137Z",
         "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/library/pack%20famille.png",
-        "lastError": "Invalid post: Facebook posts require a type (post, story, or reel).",
-        "lastErrorAt": "2026-10-02T13:45:08.069Z",
-        "reconciliationRequired": false
+        "lastError": null,
+        "lastErrorAt": null,
+        "reconciliationRequired": false,
+        "bufferStatus": "scheduled",
+        "bufferPostId": "6ac67266a6ed81713372600e",
+        "transferredAt": "2026-10-07T16:25:10.679Z",
+        "dueAt": "2026-10-12T12:00:00.000Z"
       },
       "instagram": {
-        "status": "failed",
+        "status": "scheduled_in_buffer",
         "channelId": "6ab6749aea19ca0bdee546fa",
         "channel": "instagram",
-        "attemptedAt": "2026-10-02T13:45:23.706Z",
+        "attemptedAt": "2026-10-07T16:25:10.696Z",
         "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/library/pack%20famille.png",
-        "lastError": "Quota Buffer atteint.",
-        "lastErrorAt": "2026-10-02T13:45:23.812Z",
-        "reconciliationRequired": false
+        "lastError": null,
+        "lastErrorAt": null,
+        "reconciliationRequired": false,
+        "bufferStatus": "scheduled",
+        "bufferPostId": "6ac6726675e2178a994c3c28",
+        "transferredAt": "2026-10-07T16:25:11.057Z",
+        "dueAt": "2026-10-12T12:00:00.000Z"
       }
     }
   },
