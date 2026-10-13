@@ -1,8 +1,6 @@
 name: Synchroniser Buffer
 
 on:
-  schedule:
-    - cron: "17 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -14,6 +12,8 @@ concurrency:
 
 jobs:
   cadence:
+    # Disabled at the owner’s request on 2026-10-13.
+    if: ${{ false }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
     outputs:
@@ -80,7 +80,7 @@ jobs:
 
   sync:
     needs: cadence
-    if: ${{ needs.cadence.outputs.run_sync == 'true' }}
+    if: ${{ false }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
