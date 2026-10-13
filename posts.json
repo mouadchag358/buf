@@ -827,7 +827,7 @@
     "scheduledAt": "2026-10-13T08:00:00.000Z",
     "deliveries": {
       "facebook": {
-        "status": "scheduled_in_buffer",
+        "status": "published",
         "channelId": "6ab674f7ea19ca0bdee54b05",
         "channel": "facebook",
         "attemptedAt": "2026-10-08T08:54:52.279Z",
@@ -835,14 +835,15 @@
         "lastError": null,
         "lastErrorAt": null,
         "reconciliationRequired": false,
-        "bufferStatus": "scheduled",
+        "bufferStatus": "sent",
         "bufferPostId": "6ac75a5c19c0c270c25c9f98",
         "transferredAt": "2026-10-08T08:54:52.600Z",
         "dueAt": "2026-10-13T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-13T03:31:33.980Z"
+        "lastCheckedAt": "2026-10-13T11:43:40.395Z",
+        "publishedAt": "2026-10-13T11:43:40.395Z"
       },
       "instagram": {
-        "status": "scheduled_in_buffer",
+        "status": "published",
         "channelId": "6ab6749aea19ca0bdee546fa",
         "channel": "instagram",
         "attemptedAt": "2026-10-08T08:54:52.609Z",
@@ -850,11 +851,12 @@
         "lastError": null,
         "lastErrorAt": null,
         "reconciliationRequired": false,
-        "bufferStatus": "scheduled",
+        "bufferStatus": "sent",
         "bufferPostId": "6ac75a5c5d76b00cd83217bf",
         "transferredAt": "2026-10-08T08:54:52.856Z",
         "dueAt": "2026-10-13T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-13T03:31:34.082Z"
+        "lastCheckedAt": "2026-10-13T11:43:40.403Z",
+        "publishedAt": "2026-10-13T11:43:40.403Z"
       }
     }
   },
@@ -878,7 +880,7 @@
         "bufferPostId": "6ac7c459daf7bb7cba2ae8f3",
         "transferredAt": "2026-10-08T16:27:05.426Z",
         "dueAt": "2026-10-13T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-13T03:31:34.202Z"
+        "lastCheckedAt": "2026-10-13T11:43:40.408Z"
       },
       "instagram": {
         "status": "scheduled_in_buffer",
@@ -893,7 +895,7 @@
         "bufferPostId": "6ac7c459daf7bb7cba2ae924",
         "transferredAt": "2026-10-08T16:27:05.829Z",
         "dueAt": "2026-10-13T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-13T03:31:34.218Z"
+        "lastCheckedAt": "2026-10-13T11:43:40.413Z"
       }
     }
   },
@@ -917,7 +919,7 @@
         "bufferPostId": "6ac8accef50ee21ac045854e",
         "transferredAt": "2026-10-09T08:58:54.620Z",
         "dueAt": "2026-10-14T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-13T03:31:34.223Z"
+        "lastCheckedAt": "2026-10-13T11:43:40.418Z"
       },
       "instagram": {
         "status": "scheduled_in_buffer",
@@ -932,7 +934,7 @@
         "bufferPostId": "6ac8acce599dfbfee2dbb66b",
         "transferredAt": "2026-10-09T08:58:54.837Z",
         "dueAt": "2026-10-14T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-13T03:31:34.248Z"
+        "lastCheckedAt": "2026-10-13T11:43:40.423Z"
       }
     }
   },
@@ -956,7 +958,7 @@
         "bufferPostId": "6ac911c8a5e49fef9bbacf2b",
         "transferredAt": "2026-10-09T16:09:44.768Z",
         "dueAt": "2026-10-14T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-13T03:31:34.253Z"
+        "lastCheckedAt": "2026-10-13T11:43:40.428Z"
       },
       "instagram": {
         "status": "scheduled_in_buffer",
@@ -971,7 +973,7 @@
         "bufferPostId": "6ac911c857c4b87d9cfa6f11",
         "transferredAt": "2026-10-09T16:09:45.034Z",
         "dueAt": "2026-10-14T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-13T03:31:34.268Z"
+        "lastCheckedAt": "2026-10-13T11:43:40.433Z"
       }
     }
   },
@@ -995,7 +997,7 @@
         "bufferPostId": "6aca3f8ef91f772d45955cc0",
         "transferredAt": "2026-10-10T13:37:18.716Z",
         "dueAt": "2026-10-15T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-13T03:31:34.274Z"
+        "lastCheckedAt": "2026-10-13T11:43:40.437Z"
       },
       "instagram": {
         "status": "scheduled_in_buffer",
@@ -1010,7 +1012,7 @@
         "bufferPostId": "6aca3f8ff91f772d45955ce8",
         "transferredAt": "2026-10-10T13:37:19.655Z",
         "dueAt": "2026-10-15T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-13T03:31:34.283Z"
+        "lastCheckedAt": "2026-10-13T11:43:40.442Z"
       }
     }
   },
@@ -1034,7 +1036,7 @@
         "bufferPostId": "6aca3f8fed92ed8fa5cde0ae",
         "transferredAt": "2026-10-10T13:37:19.396Z",
         "dueAt": "2026-10-15T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-13T03:31:34.294Z"
+        "lastCheckedAt": "2026-10-13T11:43:40.447Z"
       },
       "instagram": {
         "status": "scheduled_in_buffer",
@@ -1049,7 +1051,7 @@
         "bufferPostId": "6aca3f8fbba9419ccb03631c",
         "transferredAt": "2026-10-10T13:37:19.919Z",
         "dueAt": "2026-10-15T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-13T03:31:34.306Z"
+        "lastCheckedAt": "2026-10-13T11:43:40.452Z"
       }
     }
   },
@@ -1073,7 +1075,7 @@
         "bufferPostId": "6acb4ca3ed92ed8fa5f893ba",
         "transferredAt": "2026-10-11T08:45:23.111Z",
         "dueAt": "2026-10-16T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-13T03:31:34.314Z"
+        "lastCheckedAt": "2026-10-13T11:43:40.456Z"
       },
       "instagram": {
         "status": "scheduled_in_buffer",
@@ -1088,7 +1090,7 @@
         "bufferPostId": "6acb4ca3ed92ed8fa5f893e2",
         "transferredAt": "2026-10-11T08:45:23.303Z",
         "dueAt": "2026-10-16T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-13T03:31:34.318Z"
+        "lastCheckedAt": "2026-10-13T11:43:40.461Z"
       }
     }
   },
@@ -1112,7 +1114,7 @@
         "bufferPostId": "6acbad3ced92ed8fa509bcc2",
         "transferredAt": "2026-10-11T15:37:32.943Z",
         "dueAt": "2026-10-16T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-13T03:31:34.324Z"
+        "lastCheckedAt": "2026-10-13T11:43:40.466Z"
       },
       "instagram": {
         "status": "scheduled_in_buffer",
@@ -1127,7 +1129,7 @@
         "bufferPostId": "6acbad3db07d37ac97afa4e9",
         "transferredAt": "2026-10-11T15:37:33.213Z",
         "dueAt": "2026-10-16T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-13T03:31:34.334Z"
+        "lastCheckedAt": "2026-10-13T11:43:40.471Z"
       }
     }
   },
@@ -1151,7 +1153,7 @@
         "bufferPostId": "6accf9aea9fd76c926c90155",
         "transferredAt": "2026-10-12T15:15:58.265Z",
         "dueAt": "2026-10-17T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-13T03:31:34.344Z"
+        "lastCheckedAt": "2026-10-13T11:43:40.475Z"
       },
       "instagram": {
         "status": "scheduled_in_buffer",
@@ -1166,7 +1168,7 @@
         "bufferPostId": "6accf9afa9fd76c926c90204",
         "transferredAt": "2026-10-12T15:15:59.773Z",
         "dueAt": "2026-10-17T08:00:00.000Z",
-        "lastCheckedAt": "2026-10-13T03:31:34.348Z"
+        "lastCheckedAt": "2026-10-13T11:43:40.480Z"
       }
     }
   },
@@ -1190,7 +1192,7 @@
         "bufferPostId": "6accf9ae3b24c3eb109f78e8",
         "transferredAt": "2026-10-12T15:15:59.029Z",
         "dueAt": "2026-10-17T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-13T03:31:34.354Z"
+        "lastCheckedAt": "2026-10-13T11:43:40.485Z"
       },
       "instagram": {
         "status": "scheduled_in_buffer",
@@ -1205,7 +1207,7 @@
         "bufferPostId": "6accf9b04ceb31b1a55e8595",
         "transferredAt": "2026-10-12T15:16:00.726Z",
         "dueAt": "2026-10-17T12:00:00.000Z",
-        "lastCheckedAt": "2026-10-13T03:31:34.358Z"
+        "lastCheckedAt": "2026-10-13T11:43:40.490Z"
       }
     }
   },
@@ -1217,24 +1219,32 @@
     "scheduledAt": "2026-10-18T08:00:00.000Z",
     "deliveries": {
       "facebook": {
-        "status": "failed",
+        "status": "scheduled_in_buffer",
         "channelId": "6ab674f7ea19ca0bdee54b05",
         "channel": "facebook",
-        "attemptedAt": "2026-10-02T13:45:09.160Z",
+        "attemptedAt": "2026-10-13T11:43:40.901Z",
         "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/library/Image%20ChatGPT%2028%20sept.%202026%2C%2013_31_18-6.png",
-        "lastError": "Invalid post: Facebook posts require a type (post, story, or reel).",
-        "lastErrorAt": "2026-10-02T13:45:09.234Z",
-        "reconciliationRequired": false
+        "lastError": null,
+        "lastErrorAt": null,
+        "reconciliationRequired": false,
+        "bufferStatus": "scheduled",
+        "bufferPostId": "6ace196da7708f54d81f1fda",
+        "transferredAt": "2026-10-13T11:43:41.287Z",
+        "dueAt": "2026-10-18T08:00:00.000Z"
       },
       "instagram": {
-        "status": "failed",
+        "status": "scheduled_in_buffer",
         "channelId": "6ab6749aea19ca0bdee546fa",
         "channel": "instagram",
-        "attemptedAt": "2026-10-02T13:45:24.248Z",
+        "attemptedAt": "2026-10-13T11:43:41.311Z",
         "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/library/Image%20ChatGPT%2028%20sept.%202026%2C%2013_31_18-6.png",
-        "lastError": "Quota Buffer atteint.",
-        "lastErrorAt": "2026-10-02T13:45:24.282Z",
-        "reconciliationRequired": false
+        "lastError": null,
+        "lastErrorAt": null,
+        "reconciliationRequired": false,
+        "bufferStatus": "scheduled",
+        "bufferPostId": "6ace196ded1fb1ea0f936cb7",
+        "transferredAt": "2026-10-13T11:43:41.605Z",
+        "dueAt": "2026-10-18T08:00:00.000Z"
       }
     }
   },
