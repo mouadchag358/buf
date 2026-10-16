@@ -32,6 +32,8 @@ jobs:
           cache: npm
       - name: Generate the 100 course images
         run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-noto-core
           python -m pip install Pillow
           python generate-courses.py
       - name: Save images and lesson queue
