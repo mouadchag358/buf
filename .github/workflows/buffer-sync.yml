@@ -1,137 +1,59 @@
-name: Synchroniser Buffer
-
+name: Facebook bilingual lessons
 on:
   workflow_dispatch:
-
+  schedule:
+    - cron: '17 */3 * * *'
 permissions:
   contents: write
-
 concurrency:
   group: buffer-sync
   cancel-in-progress: false
-
 jobs:
-  cadence:
-    # Disabled at the owner’s request on 2026-10-13.
-    if: ${{ false }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    outputs:
-      run_sync: ${{ steps.interval.outputs.run_sync }}
-    steps:
-      - name: Récupérer le dépôt
-        uses: actions/checkout@v7
-
-      - name: Vérifier si 1 heure s'est écoulée
-        id: interval
-        shell: bash
-        run: |
-          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
-            echo "run_sync=true" >> "$GITHUB_OUTPUT"
-            echo "Déclenchement manuel : synchronisation forcée."
-            exit 0
-          fi
-
-          node <<'NODE'
-          const fs = require("fs");
-
-          let posts = [];
-          try {
-            posts = JSON.parse(fs.readFileSync("posts.json", "utf8"));
-          } catch (error) {
-            console.log("posts.json absent ou illisible : synchronisation autorisée.");
-            fs.appendFileSync(process.env.GITHUB_OUTPUT, "run_sync=true\n");
-            process.exit(0);
-          }
-
-          const timestamps = [];
-          for (const post of posts) {
-            for (const delivery of Object.values(post.deliveries || {})) {
-              for (const key of ["lastCheckedAt", "transferredAt", "attemptedAt", "publishedAt"]) {
-                const value = delivery?.[key];
-                if (!value) continue;
-                const time = Date.parse(value);
-                if (Number.isFinite(time)) timestamps.push(time);
-              }
-            }
-          }
-
-          if (!timestamps.length) {
-            console.log("Aucune synchronisation Buffer précédente trouvée.");
-            fs.appendFileSync(process.env.GITHUB_OUTPUT, "run_sync=true\n");
-            process.exit(0);
-          }
-
-          const lastSync = Math.max(...timestamps);
-          const elapsedMs = Date.now() - lastSync;
-          const oneHourMs = 60 * 60 * 1000;
-
-          console.log("Dernière activité Buffer :", new Date(lastSync).toISOString());
-          console.log("Heures écoulées :", (elapsedMs / 3600000).toFixed(2));
-
-          if (elapsedMs >= oneHourMs) {
-            fs.appendFileSync(process.env.GITHUB_OUTPUT, "run_sync=true\n");
-            console.log("1 heure ou plus : synchronisation autorisée.");
-          } else {
-            fs.appendFileSync(process.env.GITHUB_OUTPUT, "run_sync=false\n");
-            console.log("Moins de 1 heure : synchronisation ignorée.");
-          }
-          NODE
-
   sync:
-    needs: cadence
-    if: ${{ false }}
     runs-on: ubuntu-latest
-    timeout-minutes: 15
-
+    timeout-minutes: 20
     env:
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
       BUFFER_ORGANIZATION_ID: 6a9dd40e7a5c57f938ac3176
       BUFFER_FACEBOOK_CHANNEL_ID: 6ab674f7ea19ca0bdee54b05
-      BUFFER_INSTAGRAM_CHANNEL_ID: 6ab6749aea19ca0bdee546fa
-
+      BUFFER_CHANNEL_IDS: 6ab674f7ea19ca0bdee54b05
       PUBLIC_MEDIA_REPOSITORY: ${{ github.repository }}
-      PUBLIC_MEDIA_REF: ${{ github.ref_name }}
-
+      PUBLIC_MEDIA_REF: main
       TIME_ZONE: Africa/Casablanca
-      BUFFER_MAX_ATTEMPTS: 5
-
+      BUFFER_MAX_ATTEMPTS: 10
+      BUFFER_MAX_SCHEDULED: 10
     steps:
-      - name: Récupérer le dépôt
-        uses: actions/checkout@v7
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Installer Node.js
-        uses: actions/setup-node@v7
+      - uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: '24'
           cache: npm
-
-      - name: Installer les dépendances
-        run: npm ci
-
-      - name: Tester
-        run: npm test
-
-      - name: Synchroniser vers Buffer
-        id: buffer_sync
-        run: npm run buffer:sync
-
-      - name: Enregistrer l'état Buffer
-        if: ${{ always() && steps.buffer_sync.outcome != 'skipped' }}
-        shell: bash
+      - name: Generate the 100 course images
         run: |
-          if git diff --quiet -- posts.json; then
-            echo "Aucune modification à enregistrer"
-            exit 0
-          fi
-
+          python -m pip install Pillow
+          python generate-courses.py
+      - name: Save images and lesson queue
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
+          git add posts.json images/cours
+          if ! git diff --cached --quiet; then
+            git commit -m "assets: generate bilingual Facebook courses"
+            git pull --rebase -X theirs origin main
+            git push origin HEAD:main
+          fi
+      - name: Install dependencies
+        run: npm ci
+      - name: Sync Facebook Buffer queue
+        id: buffer_sync
+        run: npm run buffer:sync
+      - name: Save Buffer delivery state
+        if: ${{ always() && steps.buffer_sync.outcome != 'skipped' }}
+        run: |
+          if git diff --quiet -- posts.json; then exit 0; fi
           git add posts.json
-          git commit -m "chore: persist Buffer sync state"
-
-          git pull --rebase -X theirs origin "${GITHUB_REF_NAME}"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+          git commit -m "chore: save Facebook Buffer queue state"
+          git pull --rebase -X theirs origin main
+          git push origin HEAD:main
