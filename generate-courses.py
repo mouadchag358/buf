@@ -45,5 +45,6 @@ for i,item in enumerate(sum(groups,[])):
     hour=[8,11,16,19][i%4]
     scheduled=day.replace(hour=hour).isoformat().replace('+00:00','Z')
     posts.append({'id':f'cours-{i+1:03}','text':f'📚 Cours {i+1}/100 — {topic}\\n🇫🇷 {fr}\\n🇬🇧 {en}\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais','image':f'images/cours/{i+1:03}.png','scheduledAt':scheduled,'targetNetworks':['facebook']})
-(BASE/'posts.json').write_text(json.dumps(posts,ensure_ascii=False,indent=2)+'\\n',encoding='utf-8')
+if not (BASE/'posts.json').exists() or (BASE/'posts.json').read_text(encoding='utf-8').strip()=='[]':
+    (BASE/'posts.json').write_text(json.dumps(posts,ensure_ascii=False,indent=2)+'\\n',encoding='utf-8')
 print(f'Generated {len(posts)} image courses')
