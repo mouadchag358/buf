@@ -12,7 +12,7 @@ const {
   PUBLIC_MEDIA_REF
 } = require("./config");
 
-const SUPPORTED_SERVICES = new Set(["facebook", "instagram"]);
+const SUPPORTED_SERVICES = new Set(["facebook"]);
 
 function isoFromLocal(value, timeZone = TIME_ZONE) {
   if (!value) return null;
@@ -83,7 +83,6 @@ function channelSelection(channels) {
   const explicit = new Set((process.env.BUFFER_CHANNEL_IDS || "").split(",").map((id) => id.trim()).filter(Boolean));
   const perService = {
     facebook: process.env.BUFFER_FACEBOOK_CHANNEL_ID,
-    instagram: process.env.BUFFER_INSTAGRAM_CHANNEL_ID
   };
   return channels.filter((channel) => {
     if (!SUPPORTED_SERVICES.has(channel.service)) return false;
@@ -95,12 +94,12 @@ function channelSelection(channels) {
 }
 
 function targetServices(post, availableServices) {
-  const requested = Array.isArray(post.targetNetworks) ? post.targetNetworks : ["facebook", "instagram"];
+  const requested = Array.isArray(post.targetNetworks) ? post.targetNetworks : ["facebook"];
   return requested.filter((service) => SUPPORTED_SERVICES.has(service) && availableServices.has(service));
 }
 
 function matchesRemote(post, imageUrl, remote) {
-  return remote.text === post.text && remote.assets?.some((asset) => asset.source === imageUrl);
+  return remote.text === post.text && (!imageUrl || remote.assets?.some((asset) => asset.source === imageUrl));
 }
 
 function deliveryFromRemote(remote, channel, transferredAt) {
@@ -178,7 +177,7 @@ class BufferSync {
     const organizationId = await this.organizationId();
     const allChannels = await this.client.getChannels(organizationId);
     const channels = channelSelection(allChannels);
-    if (!channels.length) throw new Error("Aucun canal Facebook ou Instagram Buffer utilisable.");
+    if (!channels.length) throw new Error("Aucun canal Facebook Buffer utilisable.");
     const posts = this.store.read();
 
     const remotePosts = await this.client.getPosts(
@@ -226,7 +225,7 @@ class BufferSync {
         channelAttempts += 1;
         let imageUrl;
         try {
-          imageUrl = mediaUrl(post.image);
+          imageUrl = post.image ? mediaUrl(post.image) : null;
           const dueAt = isoFromLocal(post.scheduledAt);
           if (dueAt && new Date(dueAt) <= this.now()) {
             const message = `Date dépassée (${dueAt}) : aucun envoi immédiat.`;
@@ -250,7 +249,7 @@ class BufferSync {
             continue;
           }
 
-          await this.validate(imageUrl, channel.service);
+          if (imageUrl) await this.validate(imageUrl, channel.service);
           summary.planned += 1;
           if (this.dryRun) {
             console.log(`[DRY_RUN] ${post.id} -> ${channel.service} (${dueAt || "file Buffer"})`);
