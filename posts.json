@@ -1,1 +1,902 @@
-[]
+[
+  {
+    "id": "cours-001",
+    "text": "📚 Cours 1/100 — Bases\\n🇫🇷 Bonjour\\n🇬🇧 Hello\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/001.png",
+    "scheduledAt": "2026-10-17T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-002",
+    "text": "📚 Cours 2/100 — Bases\\n🇫🇷 Merci\\n🇬🇧 Thank you\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/002.png",
+    "scheduledAt": "2026-10-17T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-003",
+    "text": "📚 Cours 3/100 — Bases\\n🇫🇷 Bonsoir\\n🇬🇧 Good evening\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/003.png",
+    "scheduledAt": "2026-10-17T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-004",
+    "text": "📚 Cours 4/100 — Bases\\n🇫🇷 Bonne nuit\\n🇬🇧 Good night\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/004.png",
+    "scheduledAt": "2026-10-17T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-005",
+    "text": "📚 Cours 5/100 — Bases\\n🇫🇷 De rien\\n🇬🇧 You're welcome\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/005.png",
+    "scheduledAt": "2026-10-18T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-006",
+    "text": "📚 Cours 6/100 — Bases\\n🇫🇷 S'il vous plaît\\n🇬🇧 Please\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/006.png",
+    "scheduledAt": "2026-10-18T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-007",
+    "text": "📚 Cours 7/100 — Bases\\n🇫🇷 Excusez-moi\\n🇬🇧 Excuse me\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/007.png",
+    "scheduledAt": "2026-10-18T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-008",
+    "text": "📚 Cours 8/100 — Bases\\n🇫🇷 À bientôt\\n🇬🇧 See you soon\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/008.png",
+    "scheduledAt": "2026-10-18T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-009",
+    "text": "📚 Cours 9/100 — Bases\\n🇫🇷 À demain\\n🇬🇧 See you tomorrow\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/009.png",
+    "scheduledAt": "2026-10-19T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-010",
+    "text": "📚 Cours 10/100 — Bases\\n🇫🇷 Bienvenue\\n🇬🇧 Welcome\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/010.png",
+    "scheduledAt": "2026-10-19T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-011",
+    "text": "📚 Cours 11/100 — Présentations\\n🇫🇷 Je m'appelle\\n🇬🇧 My name is\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/011.png",
+    "scheduledAt": "2026-10-19T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-012",
+    "text": "📚 Cours 12/100 — Présentations\\n🇫🇷 Enchanté\\n🇬🇧 Nice to meet you\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/012.png",
+    "scheduledAt": "2026-10-19T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-013",
+    "text": "📚 Cours 13/100 — Présentations\\n🇫🇷 Comment ça va ?\\n🇬🇧 How are you?\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/013.png",
+    "scheduledAt": "2026-10-20T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-014",
+    "text": "📚 Cours 14/100 — Présentations\\n🇫🇷 Je vais bien\\n🇬🇧 I'm fine\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/014.png",
+    "scheduledAt": "2026-10-20T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-015",
+    "text": "📚 Cours 15/100 — Présentations\\n🇫🇷 Je suis étudiant\\n🇬🇧 I'm a student\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/015.png",
+    "scheduledAt": "2026-10-20T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-016",
+    "text": "📚 Cours 16/100 — Présentations\\n🇫🇷 J'habite ici\\n🇬🇧 I live here\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/016.png",
+    "scheduledAt": "2026-10-20T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-017",
+    "text": "📚 Cours 17/100 — Présentations\\n🇫🇷 Je viens du Maroc\\n🇬🇧 I'm from Morocco\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/017.png",
+    "scheduledAt": "2026-10-21T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-018",
+    "text": "📚 Cours 18/100 — Présentations\\n🇫🇷 Quel âge as-tu ?\\n🇬🇧 How old are you?\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/018.png",
+    "scheduledAt": "2026-10-21T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-019",
+    "text": "📚 Cours 19/100 — Présentations\\n🇫🇷 J'ai vingt ans\\n🇬🇧 I'm twenty\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/019.png",
+    "scheduledAt": "2026-10-21T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-020",
+    "text": "📚 Cours 20/100 — Présentations\\n🇫🇷 Je parle anglais\\n🇬🇧 I speak English\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/020.png",
+    "scheduledAt": "2026-10-21T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-021",
+    "text": "📚 Cours 21/100 — Verbes\\n🇫🇷 Être\\n🇬🇧 To be\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/021.png",
+    "scheduledAt": "2026-10-22T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-022",
+    "text": "📚 Cours 22/100 — Verbes\\n🇫🇷 Avoir\\n🇬🇧 To have\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/022.png",
+    "scheduledAt": "2026-10-22T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-023",
+    "text": "📚 Cours 23/100 — Verbes\\n🇫🇷 Aller\\n🇬🇧 To go\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/023.png",
+    "scheduledAt": "2026-10-22T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-024",
+    "text": "📚 Cours 24/100 — Verbes\\n🇫🇷 Faire\\n🇬🇧 To do\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/024.png",
+    "scheduledAt": "2026-10-22T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-025",
+    "text": "📚 Cours 25/100 — Verbes\\n🇫🇷 Parler\\n🇬🇧 To speak\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/025.png",
+    "scheduledAt": "2026-10-23T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-026",
+    "text": "📚 Cours 26/100 — Verbes\\n🇫🇷 Manger\\n🇬🇧 To eat\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/026.png",
+    "scheduledAt": "2026-10-23T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-027",
+    "text": "📚 Cours 27/100 — Verbes\\n🇫🇷 Boire\\n🇬🇧 To drink\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/027.png",
+    "scheduledAt": "2026-10-23T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-028",
+    "text": "📚 Cours 28/100 — Verbes\\n🇫🇷 Apprendre\\n🇬🇧 To learn\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/028.png",
+    "scheduledAt": "2026-10-23T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-029",
+    "text": "📚 Cours 29/100 — Verbes\\n🇫🇷 Écrire\\n🇬🇧 To write\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/029.png",
+    "scheduledAt": "2026-10-24T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-030",
+    "text": "📚 Cours 30/100 — Verbes\\n🇫🇷 Lire\\n🇬🇧 To read\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/030.png",
+    "scheduledAt": "2026-10-24T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-031",
+    "text": "📚 Cours 31/100 — Maison\\n🇫🇷 Maison\\n🇬🇧 House\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/031.png",
+    "scheduledAt": "2026-10-24T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-032",
+    "text": "📚 Cours 32/100 — Maison\\n🇫🇷 Chambre\\n🇬🇧 Bedroom\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/032.png",
+    "scheduledAt": "2026-10-24T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-033",
+    "text": "📚 Cours 33/100 — Maison\\n🇫🇷 Cuisine\\n🇬🇧 Kitchen\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/033.png",
+    "scheduledAt": "2026-10-25T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-034",
+    "text": "📚 Cours 34/100 — Maison\\n🇫🇷 Salle de bain\\n🇬🇧 Bathroom\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/034.png",
+    "scheduledAt": "2026-10-25T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-035",
+    "text": "📚 Cours 35/100 — Maison\\n🇫🇷 Fenêtre\\n🇬🇧 Window\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/035.png",
+    "scheduledAt": "2026-10-25T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-036",
+    "text": "📚 Cours 36/100 — Maison\\n🇫🇷 Porte\\n🇬🇧 Door\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/036.png",
+    "scheduledAt": "2026-10-25T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-037",
+    "text": "📚 Cours 37/100 — Maison\\n🇫🇷 Chaise\\n🇬🇧 Chair\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/037.png",
+    "scheduledAt": "2026-10-26T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-038",
+    "text": "📚 Cours 38/100 — Maison\\n🇫🇷 Table\\n🇬🇧 Table\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/038.png",
+    "scheduledAt": "2026-10-26T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-039",
+    "text": "📚 Cours 39/100 — Maison\\n🇫🇷 Lit\\n🇬🇧 Bed\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/039.png",
+    "scheduledAt": "2026-10-26T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-040",
+    "text": "📚 Cours 40/100 — Maison\\n🇫🇷 Jardin\\n🇬🇧 Garden\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/040.png",
+    "scheduledAt": "2026-10-26T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-041",
+    "text": "📚 Cours 41/100 — Temps\\n🇫🇷 Aujourd'hui\\n🇬🇧 Today\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/041.png",
+    "scheduledAt": "2026-10-27T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-042",
+    "text": "📚 Cours 42/100 — Temps\\n🇫🇷 Demain\\n🇬🇧 Tomorrow\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/042.png",
+    "scheduledAt": "2026-10-27T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-043",
+    "text": "📚 Cours 43/100 — Temps\\n🇫🇷 Hier\\n🇬🇧 Yesterday\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/043.png",
+    "scheduledAt": "2026-10-27T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-044",
+    "text": "📚 Cours 44/100 — Temps\\n🇫🇷 Maintenant\\n🇬🇧 Now\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/044.png",
+    "scheduledAt": "2026-10-27T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-045",
+    "text": "📚 Cours 45/100 — Temps\\n🇫🇷 Toujours\\n🇬🇧 Always\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/045.png",
+    "scheduledAt": "2026-10-28T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-046",
+    "text": "📚 Cours 46/100 — Temps\\n🇫🇷 Jamais\\n🇬🇧 Never\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/046.png",
+    "scheduledAt": "2026-10-28T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-047",
+    "text": "📚 Cours 47/100 — Temps\\n🇫🇷 Souvent\\n🇬🇧 Often\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/047.png",
+    "scheduledAt": "2026-10-28T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-048",
+    "text": "📚 Cours 48/100 — Temps\\n🇫🇷 Parfois\\n🇬🇧 Sometimes\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/048.png",
+    "scheduledAt": "2026-10-28T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-049",
+    "text": "📚 Cours 49/100 — Temps\\n🇫🇷 Tôt\\n🇬🇧 Early\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/049.png",
+    "scheduledAt": "2026-10-29T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-050",
+    "text": "📚 Cours 50/100 — Temps\\n🇫🇷 Tard\\n🇬🇧 Late\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/050.png",
+    "scheduledAt": "2026-10-29T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-051",
+    "text": "📚 Cours 51/100 — Voyage\\n🇫🇷 Passeport\\n🇬🇧 Passport\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/051.png",
+    "scheduledAt": "2026-10-29T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-052",
+    "text": "📚 Cours 52/100 — Voyage\\n🇫🇷 Billet\\n🇬🇧 Ticket\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/052.png",
+    "scheduledAt": "2026-10-29T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-053",
+    "text": "📚 Cours 53/100 — Voyage\\n🇫🇷 Aéroport\\n🇬🇧 Airport\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/053.png",
+    "scheduledAt": "2026-10-30T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-054",
+    "text": "📚 Cours 54/100 — Voyage\\n🇫🇷 Gare\\n🇬🇧 Train station\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/054.png",
+    "scheduledAt": "2026-10-30T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-055",
+    "text": "📚 Cours 55/100 — Voyage\\n🇫🇷 Hôtel\\n🇬🇧 Hotel\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/055.png",
+    "scheduledAt": "2026-10-30T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-056",
+    "text": "📚 Cours 56/100 — Voyage\\n🇫🇷 Valise\\n🇬🇧 Suitcase\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/056.png",
+    "scheduledAt": "2026-10-30T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-057",
+    "text": "📚 Cours 57/100 — Voyage\\n🇫🇷 Bus\\n🇬🇧 Bus\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/057.png",
+    "scheduledAt": "2026-10-31T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-058",
+    "text": "📚 Cours 58/100 — Voyage\\n🇫🇷 Train\\n🇬🇧 Train\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/058.png",
+    "scheduledAt": "2026-10-31T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-059",
+    "text": "📚 Cours 59/100 — Voyage\\n🇫🇷 À gauche\\n🇬🇧 To the left\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/059.png",
+    "scheduledAt": "2026-10-31T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-060",
+    "text": "📚 Cours 60/100 — Voyage\\n🇫🇷 À droite\\n🇬🇧 To the right\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/060.png",
+    "scheduledAt": "2026-10-31T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-061",
+    "text": "📚 Cours 61/100 — Travail\\n🇫🇷 Travail\\n🇬🇧 Work\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/061.png",
+    "scheduledAt": "2026-11-01T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-062",
+    "text": "📚 Cours 62/100 — Travail\\n🇫🇷 Emploi\\n🇬🇧 Job\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/062.png",
+    "scheduledAt": "2026-11-01T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-063",
+    "text": "📚 Cours 63/100 — Travail\\n🇫🇷 Entretien\\n🇬🇧 Interview\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/063.png",
+    "scheduledAt": "2026-11-01T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-064",
+    "text": "📚 Cours 64/100 — Travail\\n🇫🇷 Réunion\\n🇬🇧 Meeting\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/064.png",
+    "scheduledAt": "2026-11-01T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-065",
+    "text": "📚 Cours 65/100 — Travail\\n🇫🇷 Collègue\\n🇬🇧 Colleague\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/065.png",
+    "scheduledAt": "2026-11-02T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-066",
+    "text": "📚 Cours 66/100 — Travail\\n🇫🇷 Salaire\\n🇬🇧 Salary\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/066.png",
+    "scheduledAt": "2026-11-02T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-067",
+    "text": "📚 Cours 67/100 — Travail\\n🇫🇷 Projet\\n🇬🇧 Project\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/067.png",
+    "scheduledAt": "2026-11-02T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-068",
+    "text": "📚 Cours 68/100 — Travail\\n🇫🇷 Bureau\\n🇬🇧 Office\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/068.png",
+    "scheduledAt": "2026-11-02T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-069",
+    "text": "📚 Cours 69/100 — Travail\\n🇫🇷 Entreprise\\n🇬🇧 Company\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/069.png",
+    "scheduledAt": "2026-11-03T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-070",
+    "text": "📚 Cours 70/100 — Travail\\n🇫🇷 Client\\n🇬🇧 Customer\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/070.png",
+    "scheduledAt": "2026-11-03T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-071",
+    "text": "📚 Cours 71/100 — École\\n🇫🇷 École\\n🇬🇧 School\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/071.png",
+    "scheduledAt": "2026-11-03T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-072",
+    "text": "📚 Cours 72/100 — École\\n🇫🇷 Professeur\\n🇬🇧 Teacher\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/072.png",
+    "scheduledAt": "2026-11-03T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-073",
+    "text": "📚 Cours 73/100 — École\\n🇫🇷 Élève\\n🇬🇧 Pupil\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/073.png",
+    "scheduledAt": "2026-11-04T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-074",
+    "text": "📚 Cours 74/100 — École\\n🇫🇷 Livre\\n🇬🇧 Book\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/074.png",
+    "scheduledAt": "2026-11-04T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-075",
+    "text": "📚 Cours 75/100 — École\\n🇫🇷 Cahier\\n🇬🇧 Notebook\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/075.png",
+    "scheduledAt": "2026-11-04T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-076",
+    "text": "📚 Cours 76/100 — École\\n🇫🇷 Stylo\\n🇬🇧 Pen\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/076.png",
+    "scheduledAt": "2026-11-04T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-077",
+    "text": "📚 Cours 77/100 — École\\n🇫🇷 Examen\\n🇬🇧 Exam\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/077.png",
+    "scheduledAt": "2026-11-05T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-078",
+    "text": "📚 Cours 78/100 — École\\n🇫🇷 Devoirs\\n🇬🇧 Homework\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/078.png",
+    "scheduledAt": "2026-11-05T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-079",
+    "text": "📚 Cours 79/100 — École\\n🇫🇷 Question\\n🇬🇧 Question\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/079.png",
+    "scheduledAt": "2026-11-05T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-080",
+    "text": "📚 Cours 80/100 — École\\n🇫🇷 Réponse\\n🇬🇧 Answer\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/080.png",
+    "scheduledAt": "2026-11-05T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-081",
+    "text": "📚 Cours 81/100 — Expressions\\n🇫🇷 Je comprends\\n🇬🇧 I understand\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/081.png",
+    "scheduledAt": "2026-11-06T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-082",
+    "text": "📚 Cours 82/100 — Expressions\\n🇫🇷 Je ne sais pas\\n🇬🇧 I don't know\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/082.png",
+    "scheduledAt": "2026-11-06T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-083",
+    "text": "📚 Cours 83/100 — Expressions\\n🇫🇷 Je suis d'accord\\n🇬🇧 I agree\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/083.png",
+    "scheduledAt": "2026-11-06T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-084",
+    "text": "📚 Cours 84/100 — Expressions\\n🇫🇷 Ça dépend\\n🇬🇧 It depends\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/084.png",
+    "scheduledAt": "2026-11-06T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-085",
+    "text": "📚 Cours 85/100 — Expressions\\n🇫🇷 Bonne chance\\n🇬🇧 Good luck\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/085.png",
+    "scheduledAt": "2026-11-07T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-086",
+    "text": "📚 Cours 86/100 — Expressions\\n🇫🇷 Fais attention\\n🇬🇧 Be careful\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/086.png",
+    "scheduledAt": "2026-11-07T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-087",
+    "text": "📚 Cours 87/100 — Expressions\\n🇫🇷 Ne t'inquiète pas\\n🇬🇧 Don't worry\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/087.png",
+    "scheduledAt": "2026-11-07T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-088",
+    "text": "📚 Cours 88/100 — Expressions\\n🇫🇷 Prends ton temps\\n🇬🇧 Take your time\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/088.png",
+    "scheduledAt": "2026-11-07T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-089",
+    "text": "📚 Cours 89/100 — Expressions\\n🇫🇷 Je voudrais\\n🇬🇧 I would like\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/089.png",
+    "scheduledAt": "2026-11-08T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-090",
+    "text": "📚 Cours 90/100 — Expressions\\n🇫🇷 À mon avis\\n🇬🇧 In my opinion\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/090.png",
+    "scheduledAt": "2026-11-08T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-091",
+    "text": "📚 Cours 91/100 — Grammaire\\n🇫🇷 Je suis prêt\\n🇬🇧 I am ready\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/091.png",
+    "scheduledAt": "2026-11-08T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-092",
+    "text": "📚 Cours 92/100 — Grammaire\\n🇫🇷 Tu es gentil\\n🇬🇧 You are kind\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/092.png",
+    "scheduledAt": "2026-11-08T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-093",
+    "text": "📚 Cours 93/100 — Grammaire\\n🇫🇷 Elle est ici\\n🇬🇧 She is here\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/093.png",
+    "scheduledAt": "2026-11-09T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-094",
+    "text": "📚 Cours 94/100 — Grammaire\\n🇫🇷 Nous sommes amis\\n🇬🇧 We are friends\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/094.png",
+    "scheduledAt": "2026-11-09T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-095",
+    "text": "📚 Cours 95/100 — Grammaire\\n🇫🇷 Il fait froid\\n🇬🇧 It is cold\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/095.png",
+    "scheduledAt": "2026-11-09T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-096",
+    "text": "📚 Cours 96/100 — Grammaire\\n🇫🇷 J'ai faim\\n🇬🇧 I am hungry\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/096.png",
+    "scheduledAt": "2026-11-09T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-097",
+    "text": "📚 Cours 97/100 — Grammaire\\n🇫🇷 J'ai soif\\n🇬🇧 I am thirsty\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/097.png",
+    "scheduledAt": "2026-11-10T08:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-098",
+    "text": "📚 Cours 98/100 — Grammaire\\n🇫🇷 Je peux aider\\n🇬🇧 I can help\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/098.png",
+    "scheduledAt": "2026-11-10T11:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-099",
+    "text": "📚 Cours 99/100 — Grammaire\\n🇫🇷 Je vais voyager\\n🇬🇧 I am going to travel\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/099.png",
+    "scheduledAt": "2026-11-10T16:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  },
+  {
+    "id": "cours-100",
+    "text": "📚 Cours 100/100 — Grammaire\\n🇫🇷 Je t'aiderai\\n🇬🇧 I will help you\\n💬 Utilise cette expression en commentaire !\\n#LearnEnglish #ApprendreAnglais",
+    "image": "images/cours/100.png",
+    "scheduledAt": "2026-11-10T19:00:00Z",
+    "targetNetworks": [
+      "facebook"
+    ]
+  }
+]\n
