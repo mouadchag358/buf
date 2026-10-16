@@ -171,16 +171,14 @@ class BufferClient {
       text,
       schedulingType: "automatic",
       mode: dueAt ? "customScheduled" : "addToQueue",
-      assets: [{ image: { url: imageUrl } }]
+      ...(imageUrl ? { assets: [{ image: { url: imageUrl } }] } : {})
     };
-    if (!["facebook", "instagram"].includes(service)) {
+    if (service !== "facebook") {
       throw new BufferApiError("Réseau Buffer manquant ou non pris en charge.", { code: "CONFIGURATION" });
     }
     // Cette intégration ne prend en charge que les publications avec image.
     if (type !== "post") throw new BufferApiError("Seul le type post est pris en charge pour ces images.", { code: "CONFIGURATION" });
-    input.metadata = { [service]: service === "instagram"
-      ? { type, shouldShareToFeed: true }
-      : { type } };
+    input.metadata = { facebook: { type } };
     if (dueAt) input.dueAt = dueAt;
     const data = await this.request(CREATE_POST_MUTATION, { input }, { mutation: true });
     if (!data.createPost.post) {
