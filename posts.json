@@ -61,18 +61,19 @@
     ],
     "deliveries": {
       "facebook": {
-        "status": "scheduled_in_buffer",
+        "status": "published",
         "channelId": "6ab674f7ea19ca0bdee54b05",
         "channel": "facebook",
         "attemptedAt": "2026-10-16T11:16:22.020Z",
         "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/cours/003.png",
         "lastError": null,
-        "bufferStatus": "scheduled",
+        "bufferStatus": "sent",
         "bufferPostId": "6ad20786047945ca3099af6e",
         "transferredAt": "2026-10-16T11:16:22.268Z",
         "dueAt": "2026-10-17T16:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-17T15:42:07.587Z"
+        "lastCheckedAt": "2026-10-17T20:42:13.554Z",
+        "publishedAt": "2026-10-17T20:42:13.554Z"
       }
     }
   },
@@ -86,18 +87,19 @@
     ],
     "deliveries": {
       "facebook": {
-        "status": "scheduled_in_buffer",
+        "status": "published",
         "channelId": "6ab674f7ea19ca0bdee54b05",
         "channel": "facebook",
         "attemptedAt": "2026-10-16T11:16:22.614Z",
         "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/cours/004.png",
         "lastError": null,
-        "bufferStatus": "scheduled",
+        "bufferStatus": "sent",
         "bufferPostId": "6ad207862fe657de6e9f6c81",
         "transferredAt": "2026-10-16T11:16:22.917Z",
         "dueAt": "2026-10-17T19:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-17T15:42:07.589Z"
+        "lastCheckedAt": "2026-10-17T20:42:13.556Z",
+        "publishedAt": "2026-10-17T20:42:13.556Z"
       }
     }
   },
@@ -122,7 +124,7 @@
         "transferredAt": "2026-10-16T11:16:23.389Z",
         "dueAt": "2026-10-18T08:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-17T15:42:07.590Z"
+        "lastCheckedAt": "2026-10-17T20:42:13.557Z"
       }
     }
   },
@@ -147,7 +149,7 @@
         "transferredAt": "2026-10-16T11:16:23.998Z",
         "dueAt": "2026-10-18T11:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-17T15:42:07.591Z"
+        "lastCheckedAt": "2026-10-17T20:42:13.558Z"
       }
     }
   },
@@ -172,7 +174,7 @@
         "transferredAt": "2026-10-16T11:16:24.483Z",
         "dueAt": "2026-10-18T16:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-17T15:42:07.592Z"
+        "lastCheckedAt": "2026-10-17T20:42:13.560Z"
       }
     }
   },
@@ -197,7 +199,7 @@
         "transferredAt": "2026-10-16T11:16:25.250Z",
         "dueAt": "2026-10-18T19:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-17T15:42:07.592Z"
+        "lastCheckedAt": "2026-10-17T20:42:13.561Z"
       }
     }
   },
@@ -222,7 +224,7 @@
         "transferredAt": "2026-10-16T11:16:25.653Z",
         "dueAt": "2026-10-19T08:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-17T15:42:07.593Z"
+        "lastCheckedAt": "2026-10-17T20:42:13.561Z"
       }
     }
   },
@@ -247,7 +249,7 @@
         "transferredAt": "2026-10-16T11:16:26.321Z",
         "dueAt": "2026-10-19T11:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-17T15:42:07.593Z"
+        "lastCheckedAt": "2026-10-17T20:42:13.562Z"
       }
     }
   },
@@ -272,7 +274,7 @@
         "transferredAt": "2026-10-16T16:45:31.660Z",
         "dueAt": "2026-10-19T16:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-17T15:42:07.594Z"
+        "lastCheckedAt": "2026-10-17T20:42:13.563Z"
       }
     }
   },
@@ -297,7 +299,7 @@
         "transferredAt": "2026-10-16T16:45:32.230Z",
         "dueAt": "2026-10-19T19:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-17T15:42:07.595Z"
+        "lastCheckedAt": "2026-10-17T20:42:13.564Z"
       }
     }
   },
@@ -308,7 +310,22 @@
     "scheduledAt": "2026-10-20T08:00:00Z",
     "targetNetworks": [
       "facebook"
-    ]
+    ],
+    "deliveries": {
+      "facebook": {
+        "status": "scheduled_in_buffer",
+        "channelId": "6ab674f7ea19ca0bdee54b05",
+        "channel": "facebook",
+        "attemptedAt": "2026-10-17T20:42:13.758Z",
+        "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/cours/013.png",
+        "lastError": null,
+        "bufferStatus": "scheduled",
+        "bufferPostId": "6ad3dda6ae173d6e00d1e237",
+        "transferredAt": "2026-10-17T20:42:14.379Z",
+        "dueAt": "2026-10-20T08:00:00.000Z",
+        "lastErrorAt": null
+      }
+    }
   },
   {
     "id": "cours-014",
@@ -317,7 +334,22 @@
     "scheduledAt": "2026-10-20T11:00:00Z",
     "targetNetworks": [
       "facebook"
-    ]
+    ],
+    "deliveries": {
+      "facebook": {
+        "status": "scheduled_in_buffer",
+        "channelId": "6ab674f7ea19ca0bdee54b05",
+        "channel": "facebook",
+        "attemptedAt": "2026-10-17T20:42:14.508Z",
+        "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/cours/014.png",
+        "lastError": null,
+        "bufferStatus": "scheduled",
+        "bufferPostId": "6ad3dda60a208cb323386c57",
+        "transferredAt": "2026-10-17T20:42:14.908Z",
+        "dueAt": "2026-10-20T11:00:00.000Z",
+        "lastErrorAt": null
+      }
+    }
   },
   {
     "id": "cours-015",
