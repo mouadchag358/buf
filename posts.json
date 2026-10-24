@@ -748,7 +748,7 @@
         "transferredAt": "2026-10-21T17:19:27.245Z",
         "dueAt": "2026-10-24T08:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-23T21:29:38.862Z"
+        "lastCheckedAt": "2026-10-24T04:45:25.481Z"
       }
     }
   },
@@ -773,7 +773,7 @@
         "transferredAt": "2026-10-21T21:48:23.959Z",
         "dueAt": "2026-10-24T11:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-23T21:29:38.864Z"
+        "lastCheckedAt": "2026-10-24T04:45:25.483Z"
       }
     }
   },
@@ -798,7 +798,7 @@
         "transferredAt": "2026-10-22T12:01:57.756Z",
         "dueAt": "2026-10-24T16:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-23T21:29:38.866Z"
+        "lastCheckedAt": "2026-10-24T04:45:25.485Z"
       }
     }
   },
@@ -823,7 +823,7 @@
         "transferredAt": "2026-10-22T12:01:58.232Z",
         "dueAt": "2026-10-24T19:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-23T21:29:38.867Z"
+        "lastCheckedAt": "2026-10-24T04:45:25.487Z"
       }
     }
   },
@@ -848,7 +848,7 @@
         "transferredAt": "2026-10-22T17:17:10.004Z",
         "dueAt": "2026-10-25T08:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-23T21:29:38.868Z"
+        "lastCheckedAt": "2026-10-24T04:45:25.488Z"
       }
     }
   },
@@ -873,7 +873,7 @@
         "transferredAt": "2026-10-22T21:43:08.260Z",
         "dueAt": "2026-10-25T11:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-23T21:29:38.870Z"
+        "lastCheckedAt": "2026-10-24T04:45:25.489Z"
       }
     }
   },
@@ -898,7 +898,7 @@
         "transferredAt": "2026-10-23T11:47:54.901Z",
         "dueAt": "2026-10-25T16:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-23T21:29:38.870Z"
+        "lastCheckedAt": "2026-10-24T04:45:25.490Z"
       }
     }
   },
@@ -923,7 +923,7 @@
         "transferredAt": "2026-10-23T11:47:55.308Z",
         "dueAt": "2026-10-25T19:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-23T21:29:38.871Z"
+        "lastCheckedAt": "2026-10-24T04:45:25.491Z"
       }
     }
   },
@@ -948,7 +948,7 @@
         "transferredAt": "2026-10-23T17:15:12.685Z",
         "dueAt": "2026-10-26T08:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-23T21:29:38.872Z"
+        "lastCheckedAt": "2026-10-24T04:45:25.492Z"
       }
     }
   },
@@ -972,7 +972,8 @@
         "bufferPostId": "6adbd1c39acae620d81bed82",
         "transferredAt": "2026-10-23T21:29:39.705Z",
         "dueAt": "2026-10-26T11:00:00.000Z",
-        "lastErrorAt": null
+        "lastErrorAt": null,
+        "lastCheckedAt": "2026-10-24T04:45:25.493Z"
       }
     }
   },
