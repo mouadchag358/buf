@@ -1049,18 +1049,19 @@
     ],
     "deliveries": {
       "facebook": {
-        "status": "scheduled_in_buffer",
+        "status": "published",
         "channelId": "6ab674f7ea19ca0bdee54b05",
         "channel": "facebook",
         "attemptedAt": "2026-10-24T20:56:41.032Z",
         "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/cours/041.png",
         "lastError": null,
-        "bufferStatus": "scheduled",
+        "bufferStatus": "sent",
         "bufferPostId": "6add1b893d5b27036ba15e91",
         "transferredAt": "2026-10-24T20:56:41.372Z",
         "dueAt": "2026-10-27T08:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-27T00:32:33.550Z"
+        "lastCheckedAt": "2026-10-27T09:07:40.924Z",
+        "publishedAt": "2026-10-27T09:07:40.924Z"
       }
     }
   },
@@ -1085,7 +1086,7 @@
         "transferredAt": "2026-10-24T20:56:41.916Z",
         "dueAt": "2026-10-27T11:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-27T00:32:33.552Z"
+        "lastCheckedAt": "2026-10-27T09:07:40.953Z"
       }
     }
   },
@@ -1110,7 +1111,7 @@
         "transferredAt": "2026-10-25T11:42:15.800Z",
         "dueAt": "2026-10-27T16:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-27T00:32:33.554Z"
+        "lastCheckedAt": "2026-10-27T09:07:40.959Z"
       }
     }
   },
@@ -1135,7 +1136,7 @@
         "transferredAt": "2026-10-25T11:42:16.221Z",
         "dueAt": "2026-10-27T19:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-27T00:32:33.555Z"
+        "lastCheckedAt": "2026-10-27T09:07:40.964Z"
       }
     }
   },
@@ -1160,7 +1161,7 @@
         "transferredAt": "2026-10-25T16:31:20.486Z",
         "dueAt": "2026-10-28T08:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-27T00:32:33.556Z"
+        "lastCheckedAt": "2026-10-27T09:07:40.964Z"
       }
     }
   },
@@ -1185,7 +1186,7 @@
         "transferredAt": "2026-10-25T20:56:48.204Z",
         "dueAt": "2026-10-28T11:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-27T00:32:33.558Z"
+        "lastCheckedAt": "2026-10-27T09:07:40.965Z"
       }
     }
   },
@@ -1210,7 +1211,7 @@
         "transferredAt": "2026-10-26T13:14:29.391Z",
         "dueAt": "2026-10-28T16:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-27T00:32:33.559Z"
+        "lastCheckedAt": "2026-10-27T09:07:40.966Z"
       }
     }
   },
@@ -1235,7 +1236,7 @@
         "transferredAt": "2026-10-26T13:14:29.977Z",
         "dueAt": "2026-10-28T19:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-27T00:32:33.560Z"
+        "lastCheckedAt": "2026-10-27T09:07:40.973Z"
       }
     }
   },
@@ -1260,7 +1261,7 @@
         "transferredAt": "2026-10-26T20:35:55.176Z",
         "dueAt": "2026-10-29T08:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-27T00:32:33.561Z"
+        "lastCheckedAt": "2026-10-27T09:07:40.974Z"
       }
     }
   },
@@ -1285,7 +1286,7 @@
         "transferredAt": "2026-10-26T20:35:55.713Z",
         "dueAt": "2026-10-29T11:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-27T00:32:33.562Z"
+        "lastCheckedAt": "2026-10-27T09:07:40.975Z"
       }
     }
   },
@@ -1296,7 +1297,22 @@
     "scheduledAt": "2026-10-29T16:00:00Z",
     "targetNetworks": [
       "facebook"
-    ]
+    ],
+    "deliveries": {
+      "facebook": {
+        "status": "scheduled_in_buffer",
+        "channelId": "6ab674f7ea19ca0bdee54b05",
+        "channel": "facebook",
+        "attemptedAt": "2026-10-27T09:07:41.157Z",
+        "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/cours/051.png",
+        "lastError": null,
+        "bufferStatus": "scheduled",
+        "bufferPostId": "6ae069dd98379627cc311efe",
+        "transferredAt": "2026-10-27T09:07:41.552Z",
+        "dueAt": "2026-10-29T16:00:00.000Z",
+        "lastErrorAt": null
+      }
+    }
   },
   {
     "id": "cours-052",
