@@ -1075,18 +1075,19 @@
     ],
     "deliveries": {
       "facebook": {
-        "status": "scheduled_in_buffer",
+        "status": "published",
         "channelId": "6ab674f7ea19ca0bdee54b05",
         "channel": "facebook",
         "attemptedAt": "2026-10-24T20:56:41.471Z",
         "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/cours/042.png",
         "lastError": null,
-        "bufferStatus": "scheduled",
+        "bufferStatus": "sent",
         "bufferPostId": "6add1b898b3d437ddcd9792a",
         "transferredAt": "2026-10-24T20:56:41.916Z",
         "dueAt": "2026-10-27T11:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-27T09:07:40.953Z"
+        "lastCheckedAt": "2026-10-27T15:25:21.200Z",
+        "publishedAt": "2026-10-27T15:25:21.200Z"
       }
     }
   },
@@ -1111,7 +1112,7 @@
         "transferredAt": "2026-10-25T11:42:15.800Z",
         "dueAt": "2026-10-27T16:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-27T09:07:40.959Z"
+        "lastCheckedAt": "2026-10-27T15:25:21.202Z"
       }
     }
   },
@@ -1136,7 +1137,7 @@
         "transferredAt": "2026-10-25T11:42:16.221Z",
         "dueAt": "2026-10-27T19:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-27T09:07:40.964Z"
+        "lastCheckedAt": "2026-10-27T15:25:21.203Z"
       }
     }
   },
@@ -1161,7 +1162,7 @@
         "transferredAt": "2026-10-25T16:31:20.486Z",
         "dueAt": "2026-10-28T08:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-27T09:07:40.964Z"
+        "lastCheckedAt": "2026-10-27T15:25:21.205Z"
       }
     }
   },
@@ -1186,7 +1187,7 @@
         "transferredAt": "2026-10-25T20:56:48.204Z",
         "dueAt": "2026-10-28T11:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-27T09:07:40.965Z"
+        "lastCheckedAt": "2026-10-27T15:25:21.206Z"
       }
     }
   },
@@ -1211,7 +1212,7 @@
         "transferredAt": "2026-10-26T13:14:29.391Z",
         "dueAt": "2026-10-28T16:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-27T09:07:40.966Z"
+        "lastCheckedAt": "2026-10-27T15:25:21.207Z"
       }
     }
   },
@@ -1236,7 +1237,7 @@
         "transferredAt": "2026-10-26T13:14:29.977Z",
         "dueAt": "2026-10-28T19:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-27T09:07:40.973Z"
+        "lastCheckedAt": "2026-10-27T15:25:21.210Z"
       }
     }
   },
@@ -1261,7 +1262,7 @@
         "transferredAt": "2026-10-26T20:35:55.176Z",
         "dueAt": "2026-10-29T08:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-27T09:07:40.974Z"
+        "lastCheckedAt": "2026-10-27T15:25:21.211Z"
       }
     }
   },
@@ -1286,7 +1287,7 @@
         "transferredAt": "2026-10-26T20:35:55.713Z",
         "dueAt": "2026-10-29T11:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-10-27T09:07:40.975Z"
+        "lastCheckedAt": "2026-10-27T15:25:21.212Z"
       }
     }
   },
@@ -1310,7 +1311,8 @@
         "bufferPostId": "6ae069dd98379627cc311efe",
         "transferredAt": "2026-10-27T09:07:41.552Z",
         "dueAt": "2026-10-29T16:00:00.000Z",
-        "lastErrorAt": null
+        "lastErrorAt": null,
+        "lastCheckedAt": "2026-10-27T15:25:21.213Z"
       }
     }
   },
@@ -1321,7 +1323,22 @@
     "scheduledAt": "2026-10-29T19:00:00Z",
     "targetNetworks": [
       "facebook"
-    ]
+    ],
+    "deliveries": {
+      "facebook": {
+        "status": "scheduled_in_buffer",
+        "channelId": "6ab674f7ea19ca0bdee54b05",
+        "channel": "facebook",
+        "attemptedAt": "2026-10-27T15:25:21.336Z",
+        "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/cours/052.png",
+        "lastError": null,
+        "bufferStatus": "scheduled",
+        "bufferPostId": "6ae0c26193ca59e809f5872f",
+        "transferredAt": "2026-10-27T15:25:21.646Z",
+        "dueAt": "2026-10-29T19:00:00.000Z",
+        "lastErrorAt": null
+      }
+    }
   },
   {
     "id": "cours-053",
