@@ -1777,18 +1777,19 @@
     ],
     "deliveries": {
       "facebook": {
-        "status": "scheduled_in_buffer",
+        "status": "published",
         "channelId": "6ab674f7ea19ca0bdee54b05",
         "channel": "facebook",
         "attemptedAt": "2026-10-31T19:21:48.757Z",
         "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/cours/069.png",
         "lastError": null,
-        "bufferStatus": "scheduled",
+        "bufferStatus": "sent",
         "bufferPostId": "6ae63fcd1ee172cd6dbbde3b",
         "transferredAt": "2026-10-31T19:21:49.126Z",
         "dueAt": "2026-11-03T08:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-11-03T02:56:51.678Z"
+        "lastCheckedAt": "2026-11-03T10:59:26.624Z",
+        "publishedAt": "2026-11-03T10:59:26.624Z"
       }
     }
   },
@@ -1813,7 +1814,7 @@
         "transferredAt": "2026-10-31T19:21:49.717Z",
         "dueAt": "2026-11-03T11:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-11-03T02:56:51.680Z"
+        "lastCheckedAt": "2026-11-03T10:59:26.626Z"
       }
     }
   },
@@ -1838,7 +1839,7 @@
         "transferredAt": "2026-11-01T16:06:26.451Z",
         "dueAt": "2026-11-03T16:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-11-03T02:56:51.682Z"
+        "lastCheckedAt": "2026-11-03T10:59:26.628Z"
       }
     }
   },
@@ -1863,7 +1864,7 @@
         "transferredAt": "2026-11-01T16:06:26.919Z",
         "dueAt": "2026-11-03T19:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-11-03T02:56:51.684Z"
+        "lastCheckedAt": "2026-11-03T10:59:26.630Z"
       }
     }
   },
@@ -1888,7 +1889,7 @@
         "transferredAt": "2026-11-01T16:06:27.398Z",
         "dueAt": "2026-11-04T08:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-11-03T02:56:51.685Z"
+        "lastCheckedAt": "2026-11-03T10:59:26.631Z"
       }
     }
   },
@@ -1913,7 +1914,7 @@
         "transferredAt": "2026-11-01T22:08:51.482Z",
         "dueAt": "2026-11-04T11:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-11-03T02:56:51.688Z"
+        "lastCheckedAt": "2026-11-03T10:59:26.634Z"
       }
     }
   },
@@ -1938,7 +1939,7 @@
         "transferredAt": "2026-11-02T19:34:23.653Z",
         "dueAt": "2026-11-04T16:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-11-03T02:56:51.689Z"
+        "lastCheckedAt": "2026-11-03T10:59:26.635Z"
       }
     }
   },
@@ -1963,7 +1964,7 @@
         "transferredAt": "2026-11-02T19:34:24.067Z",
         "dueAt": "2026-11-04T19:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-11-03T02:56:51.691Z"
+        "lastCheckedAt": "2026-11-03T10:59:26.637Z"
       }
     }
   },
@@ -1988,7 +1989,7 @@
         "transferredAt": "2026-11-02T19:34:24.474Z",
         "dueAt": "2026-11-05T08:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-11-03T02:56:51.692Z"
+        "lastCheckedAt": "2026-11-03T10:59:26.638Z"
       }
     }
   },
@@ -2013,7 +2014,7 @@
         "transferredAt": "2026-11-02T19:34:24.846Z",
         "dueAt": "2026-11-05T11:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-11-03T02:56:51.694Z"
+        "lastCheckedAt": "2026-11-03T10:59:26.640Z"
       }
     }
   },
@@ -2024,7 +2025,22 @@
     "scheduledAt": "2026-11-05T16:00:00Z",
     "targetNetworks": [
       "facebook"
-    ]
+    ],
+    "deliveries": {
+      "facebook": {
+        "status": "scheduled_in_buffer",
+        "channelId": "6ab674f7ea19ca0bdee54b05",
+        "channel": "facebook",
+        "attemptedAt": "2026-11-03T10:59:27.719Z",
+        "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/cours/079.png",
+        "lastError": null,
+        "bufferStatus": "scheduled",
+        "bufferPostId": "6ae9be8f5bd65daf78f1cc11",
+        "transferredAt": "2026-11-03T10:59:28.102Z",
+        "dueAt": "2026-11-05T16:00:00.000Z",
+        "lastErrorAt": null
+      }
+    }
   },
   {
     "id": "cours-080",
