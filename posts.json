@@ -2583,18 +2583,19 @@
     ],
     "deliveries": {
       "facebook": {
-        "status": "scheduled_in_buffer",
+        "status": "published",
         "channelId": "6ab674f7ea19ca0bdee54b05",
         "channel": "facebook",
         "attemptedAt": "2026-11-08T13:38:38.403Z",
         "imageUrl": "https://raw.githubusercontent.com/mouadchag358/buf/main/images/cours/100.png",
         "lastError": null,
-        "bufferStatus": "scheduled",
+        "bufferStatus": "sent",
         "bufferPostId": "6af07b5e004e4879a7bd3208",
         "transferredAt": "2026-11-08T13:38:38.742Z",
         "dueAt": "2026-11-10T19:00:00.000Z",
         "lastErrorAt": null,
-        "lastCheckedAt": "2026-11-10T17:07:08.197Z"
+        "lastCheckedAt": "2026-11-10T23:28:40.651Z",
+        "publishedAt": "2026-11-10T23:28:40.651Z"
       }
     }
   }
